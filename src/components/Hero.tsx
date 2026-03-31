@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Command, Triangle, Hexagon } from "lucide-react";
+import { Command, Zap, TrendingUp, Target, Rocket, Triangle, Hexagon, Shield, MousePointerClick, Activity } from "lucide-react";
 
 export default function Hero() {
   const scrollToContact = () => {
@@ -11,8 +11,8 @@ export default function Hero() {
   return (
     <section className="relative pt-32 pb-20 overflow-hidden bg-primary text-white min-h-screen flex items-center">
       {/* Background glow effects */}
-      <div className="absolute top-1/4 left-1/4 w-[30vw] h-[30vw] min-w-[300px] min-h-[300px] bg-secondary/20 rounded-full blur-[100px] pointer-events-none" />
-      <div className="absolute bottom-1/4 right-1/4 w-[40vw] h-[40vw] min-w-[400px] min-h-[400px] bg-success/20 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/4 left-1/4 w-[30vw] h-[30vw] min-w-[300px] min-h-[300px] bg-yellow-500/10 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute bottom-1/4 right-1/4 w-[40vw] h-[40vw] min-w-[400px] min-h-[400px] bg-amber-600/10 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 md:px-20 relative z-10 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
@@ -68,49 +68,156 @@ export default function Hero() {
             </div>
           </motion.div>
 
-          {/* Right Column: Abstract Animated Mesh/Graphic */}
+          {/* Right Column: Growth Engine 3D Animation */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 1 }}
             viewport={{ once: true }}
-            className="relative h-[400px] lg:h-[600px] flex items-center justify-center pointer-events-none"
+            className="relative h-[500px] lg:h-[700px] flex items-center justify-center pt-10"
           >
-            {/* Elegant animated shapes simulating a 3D glass effect */}
-            <div className="relative w-full max-w-[500px] aspect-square">
-              <motion.div 
-                animate={{ 
-                  rotate: [0, 90, 180, 270, 360],
-                  borderRadius: ["30% 70% 70% 30% / 30% 30% 70% 70%", "50% 50% 20% 80% / 25% 80% 20% 75%", "70% 30% 50% 50% / 30% 30% 70% 70%", "30% 70% 70% 30% / 30% 30% 70% 70%"]
-                }}
-                transition={{ repeat: Infinity, duration: 15, ease: "linear" }}
-                className="absolute inset-0 bg-gradient-to-tr from-secondary to-orange-500 opacity-60 blur-md pointer-events-none"
-              />
-              <motion.div 
-                animate={{ 
-                  rotate: [360, 270, 180, 90, 0],
-                  borderRadius: ["60% 40% 30% 70% / 60% 30% 70% 40%", "30% 70% 70% 30% / 50% 30% 70% 50%", "50% 50% 20% 80% / 25% 80% 20% 75%", "60% 40% 30% 70% / 60% 30% 70% 40%"]
-                }}
-                transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
-                className="absolute inset-8 bg-gradient-to-tl from-yellow-300 to-amber-400 opacity-50 blur-lg pointer-events-none"
-              />
+            {/* The Growth Engine Container */}
+            <div className="relative w-full max-w-[600px] aspect-square flex items-center justify-center">
               
-              {/* Glassmorphism overlay card */}
+              {/* Outer Glows */}
+              <div className="absolute inset-0 bg-yellow-500/5 blur-[120px] rounded-full animate-pulse" />
+              
+              {/* 1. THE OUTER ORBIT (Slow, Large) */}
               <motion.div
-                animate={{ y: [-10, 10, -10] }}
-                transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
-                className="absolute inset-12 bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl p-6 flex flex-col justify-between pointer-events-none"
+                animate={{ rotate: 360 }}
+                transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+                className="absolute w-[95%] h-[95%] border border-white/5 rounded-full"
               >
-                <div className="w-full">
-                  <div className="h-4 w-1/3 bg-slate-300/30 rounded mb-4"></div>
-                  <div className="h-2 w-full bg-slate-300/20 rounded mb-2"></div>
-                  <div className="h-2 w-5/6 bg-slate-300/20 rounded"></div>
-                </div>
-                <div className="mt-8 flex gap-4">
-                  <div className="h-24 w-1/2 bg-gradient-to-t from-secondary/40 to-transparent rounded-lg border border-white/5"></div>
-                  <div className="h-32 w-1/2 bg-gradient-to-t from-success/40 to-transparent rounded-lg border border-white/5 self-end"></div>
-                </div>
+                {/* Floating STRATEGY Tag */}
+                <motion.div 
+                  className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-2 bg-zinc-900/80 backdrop-blur-md border border-white/10 rounded-full flex items-center gap-2 shadow-2xl"
+                  animate={{ rotate: -360 }}
+                  transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+                >
+                  <Rocket className="w-4 h-4 text-orange-500" />
+                  <span className="text-[10px] font-bold tracking-widest uppercase text-white">Strategy</span>
+                </motion.div>
+
+                {/* Floating DATA-DRIVEN Tag */}
+                <motion.div 
+                  className="absolute -bottom-4 left-1/2 -translate-x-1/2 px-4 py-2 bg-zinc-900/80 backdrop-blur-md border border-white/10 rounded-full flex items-center gap-2 shadow-2xl"
+                  initial={{ rotate: 0 }}
+                  animate={{ rotate: -360 }}
+                  transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+                >
+                  <Activity className="w-4 h-4 text-amber-500" />
+                  <span className="text-[10px] font-bold tracking-widest uppercase text-white">Data Driven</span>
+                </motion.div>
               </motion.div>
+
+              {/* 2. THE MIDDLE ORBIT (Counter-Rotate, Glassy) */}
+              <motion.div
+                animate={{ rotate: -360 }}
+                transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+                className="absolute w-[75%] h-[75%] border border-yellow-500/10 rounded-full"
+              >
+                {/* Floating ROI Tag */}
+                <motion.div 
+                  className="absolute top-1/2 -right-4 -translate-y-1/2 px-4 py-2 bg-zinc-900/80 backdrop-blur-md border border-yellow-500/20 rounded-full flex items-center gap-2 shadow-2xl"
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+                >
+                  <TrendingUp className="w-4 h-4 text-yellow-500" />
+                  <span className="text-[10px] font-bold tracking-widest uppercase text-white">ROI Focus</span>
+                </motion.div>
+
+                {/* Floating SCALABILITY Tag */}
+                <motion.div 
+                  className="absolute top-1/2 -left-4 -translate-y-1/2 px-4 py-2 bg-zinc-900/80 backdrop-blur-md border border-yellow-500/20 rounded-full flex items-center gap-2 shadow-2xl"
+                  initial={{ rotate: 0 }}
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+                >
+                  <Zap className="w-4 h-4 text-amber-400" />
+                  <span className="text-[10px] font-bold tracking-widest uppercase text-white">Scalability</span>
+                </motion.div>
+              </motion.div>
+
+              {/* 3. THE INNER ORBIT (Fast, Dashed) */}
+              <motion.div
+                animate={{ rotate: 360 }}
+                transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
+                className="absolute w-[55%] h-[55%] border border-dashed border-white/10 rounded-full"
+              >
+                {/* Floating ADS Tag */}
+                <motion.div 
+                  className="absolute bottom-0 left-1/2 -translate-x-1/2 -translate-y-1/2 px-4 py-2 bg-zinc-950/90 backdrop-blur-md border border-white/10 rounded-full flex items-center gap-2 shadow-xl"
+                  animate={{ rotate: -360 }}
+                  transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
+                >
+                  <Target className="w-4 h-4 text-white" />
+                  <span className="text-[10px] font-bold tracking-widest uppercase text-white">Paid Ads</span>
+                </motion.div>
+
+                {/* Floating RETENTION Tag */}
+                <motion.div 
+                  className="absolute top-1/2 -left-4 -translate-y-1/2 px-4 py-2 bg-zinc-950/90 backdrop-blur-md border border-white/10 rounded-full flex items-center gap-2 shadow-xl"
+                  initial={{ rotate: 0 }}
+                  animate={{ rotate: -360 }}
+                  transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
+                >
+                  <Shield className="w-4 h-4 text-orange-400" />
+                  <span className="text-[10px] font-bold tracking-widest uppercase text-white">Retention</span>
+                </motion.div>
+              </motion.div>
+
+              {/* 4. THE CENTRAL CORE (Pulsating) */}
+              <div className="relative w-32 h-32 flex items-center justify-center">
+                {/* Multi-layered Glows */}
+                <motion.div 
+                  animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.6, 0.3] }}
+                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                  className="absolute inset-0 bg-yellow-500 rounded-full blur-3xl"
+                />
+                <div className="absolute inset-0 bg-gradient-to-tr from-yellow-400 to-amber-600 rounded-3xl rotate-45 opacity-20 blur-sm" />
+                
+                {/* Core Brand Element */}
+                <motion.div 
+                  whileHover={{ scale: 1.1, rotate: 90 }}
+                  className="relative z-10 w-20 h-20 bg-zinc-900 border-2 border-yellow-500/50 rounded-3xl flex items-center justify-center shadow-[0_0_50px_rgba(234,179,8,0.3)] cursor-pointer overflow-hidden group"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-tr from-yellow-500/20 to-transparent group-hover:opacity-100 transition-opacity opacity-0" />
+                  <Command className="w-10 h-10 text-yellow-500 drop-shadow-[0_0_10px_rgba(234,179,8,0.5)]" />
+                </motion.div>
+
+                {/* Satellite Particles */}
+                {[0, 72, 144, 216, 288].map((angle, i) => (
+                  <motion.div
+                    key={i}
+                    animate={{ rotate: 360 }}
+                    transition={{ duration: 8 + i, repeat: Infinity, ease: "linear" }}
+                    style={{ rotate: angle }}
+                    className="absolute inset-0"
+                  >
+                    <div className="absolute -top-1 left-1/2 w-1 h-1 bg-yellow-400 rounded-full blur-[1px]" />
+                  </motion.div>
+                ))}
+              </div>
+
+              {/* Abstract Floating Lines SVG */}
+              <svg className="absolute inset-0 w-full h-full pointer-events-none opacity-20" viewBox="0 0 100 100">
+                <motion.path
+                  d="M 50 10 Q 90 50 50 90 Q 10 50 50 10"
+                  fill="none"
+                  stroke="url(#coreGradient)"
+                  strokeWidth="0.2"
+                  initial={{ pathLength: 0 }}
+                  animate={{ pathLength: 1 }}
+                  transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
+                />
+                <defs>
+                  <linearGradient id="coreGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#fbbf24" />
+                    <stop offset="100%" stopColor="#f59e0b" />
+                  </linearGradient>
+                </defs>
+              </svg>
+
             </div>
           </motion.div>
         </div>

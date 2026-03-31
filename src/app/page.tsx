@@ -1,12 +1,15 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
+import StatsCounter from "@/components/StatsCounter";
 import Services from "@/components/Services";
+import Testimonials from "@/components/Testimonials";
 import Team from "@/components/Team";
 import Blogs from "@/components/Blogs";
 import Pricing from "@/components/Pricing";
 import ContactForm from "@/components/ContactForm";
 import FAQ from "@/components/FAQ";
+import Footer from "@/components/Footer";
 import { Toaster } from "react-hot-toast";
 
 export default function Home() {
@@ -15,12 +18,15 @@ export default function Home() {
       <Navbar />
       <Hero />
       <About />
+      <StatsCounter />
       <Services />
+      <Testimonials />
       <Pricing />
       <FAQ />
       <Team />
       <Blogs />
       <ContactForm />
+      <Footer />
       
       {/* Toast Notifications */}
       <Toaster 
