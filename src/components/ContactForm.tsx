@@ -43,12 +43,8 @@ export default function ContactForm() {
   });
 
   useEffect(() => {
-    const handleSelectPackage = (e: Event) => {
-      const customEvent = e as CustomEvent;
-      // Optionally auto-fill subject with package name
-    };
-    window.addEventListener("selectPackage", handleSelectPackage);
-    return () => window.removeEventListener("selectPackage", handleSelectPackage);
+    window.addEventListener("selectPackage", () => {});
+    return () => window.removeEventListener("selectPackage", () => {});
   }, []);
 
   const onSubmit = async (data: FormData) => {

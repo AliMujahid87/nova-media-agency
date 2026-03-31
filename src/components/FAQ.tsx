@@ -11,7 +11,7 @@ export default function FAQ() {
   const questions = [
     {
       q: "How do I choose the right package for my business?",
-      a: "The right package depends on your business goals, target audience, and the level of service you require. If you're unsure which package is best, our team is here to help. We offer free consultations where we assess your needs, understand your objectives, and recommend the most suitable package to help you achieve measurable results."
+      a: "The right package depends on your business goals, target audience, and the level of service you require. If you are unsure which package is best, our team is here to help. We offer free consultations where we assess your needs, understand your objectives, and recommend the most suitable package to help you achieve measurable results."
     },
     {
       q: "Can I upgrade or downgrade my package at any time?",
@@ -27,7 +27,7 @@ export default function FAQ() {
     },
     {
       q: "How can I track the results of my campaigns?",
-      a: "We implement advanced tracking systems including Google Analytics, Meta Pixel, and custom UTM parameters. You'll always have clear visibility on leads, conversions, and exact ROI through our reporting dashboard."
+      a: "We implement advanced tracking systems including Google Analytics, Meta Pixel, and custom UTM parameters. You will always have clear visibility on leads, conversions, and exact ROI through our reporting dashboard."
     }
   ];
 
@@ -51,7 +51,7 @@ export default function FAQ() {
               Most Popular Questions
             </h2>
             <p className="text-[15px] text-slate-400 mb-8 leading-relaxed max-w-sm">
-              Explore the answers to the most common questions we receive about our services and pricing. We're here to ensure you make the best decision for your business.
+              Explore the answers to the most common questions we receive about our services and pricing. We are here to ensure you make the best decision for your business.
             </p>
             <Link 
               href="#contact"
