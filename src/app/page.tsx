@@ -7,6 +7,7 @@ import Blogs from "@/components/Blogs";
 import Pricing from "@/components/Pricing";
 import Portfolio from "@/components/Portfolio";
 import ContactForm from "@/components/ContactForm";
+import FAQ from "@/components/FAQ";
 import { Toaster } from "react-hot-toast";
 
 export default function Home() {
@@ -18,6 +19,7 @@ export default function Home() {
       <Services />
       <Portfolio />
       <Pricing />
+      <FAQ />
       <Team />
       <Blogs />
       <ContactForm />

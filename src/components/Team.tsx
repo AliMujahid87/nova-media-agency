@@ -5,19 +5,19 @@ import Image from "next/image";
 
 const teamMembers = [
   {
-    name: "Alex Sterling",
+    name: "Aisha Rahman",
     role: "Chief Growth Officer",
-    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    image: "/team/team-1.png",
   },
   {
-    name: "Sarah Jenkins",
+    name: "Zainab Malik",
     role: "Head of Strategy",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    image: "/team/team-2.png",
   },
   {
-    name: "David Chen",
+    name: "Nadia Hussain",
     role: "Director of Paid Media",
-    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    image: "/team/team-3.png",
   },
 ];
 

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown, ChevronRight } from "lucide-react";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -81,9 +81,64 @@ export default function Navbar() {
             <a href="#about" onClick={(e) => scrollToSection(e, "about")} className="text-zinc-300 hover:text-yellow-400 transition-colors">
               About us
             </a>
-            <a href="#services" onClick={(e) => scrollToSection(e, "services")} className="text-zinc-300 hover:text-yellow-400 transition-colors">
-              Services
-            </a>
+            
+            {/* Services Dropdown */}
+            <div className="relative group">
+              <a href="#services" onClick={(e) => scrollToSection(e, "services")} className="flex items-center gap-1 text-zinc-300 hover:text-yellow-400 transition-colors py-2">
+                Services
+                <ChevronDown size={14} className="transition-transform duration-300 group-hover:rotate-180" />
+              </a>
+              
+              {/* Dropdown Menu */}
+              <div className="absolute top-full left-1/2 -translate-x-1/2 pt-6 w-[260px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50">
+                <div className="bg-zinc-900 rounded-xl border border-white/5 py-3 shadow-2xl relative">
+                  {/* Invisible bridge to prevent hover loss when moving mouse down */}
+                  <div className="absolute -top-6 left-0 right-0 h-6"></div>
+                  
+                  <Link href="#brand-identity" className="block px-6 py-3 text-[15px] font-semibold text-white hover:bg-white hover:text-black transition-colors">
+                    Brand Identity
+                  </Link>
+                  <Link href="#graphic-design" className="block px-6 py-3 text-[15px] font-semibold text-white hover:bg-white hover:text-black transition-colors">
+                    Graphic Design
+                  </Link>
+                  
+                  <div className="relative group/sub">
+                    <Link href="#digital-marketing" className="flex items-center justify-between px-6 py-3 text-[15px] font-semibold text-white group-hover/sub:bg-white group-hover/sub:text-black transition-colors cursor-pointer">
+                      Digital Marketing
+                      <ChevronRight size={16} />
+                    </Link>
+                    
+                    {/* Sub Dropdown */}
+                    <div className="absolute top-0 left-full pl-2 w-[280px] opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible transition-all duration-300 transform translate-x-2 group-hover/sub:translate-x-0 z-50">
+                      <div className="bg-zinc-900 rounded-xl border border-white/5 py-3 shadow-2xl relative">
+                        {/* Invisible bridge to the left to prevent hover loss */}
+                        <div className="absolute top-0 -left-2 bottom-0 w-2"></div>
+                        
+                        <Link href="#ppc" className="block px-6 py-3 text-[15px] font-semibold text-white hover:bg-white hover:text-black transition-colors">
+                          PPC
+                        </Link>
+                        <Link href="#seo" className="block px-6 py-3 text-[15px] font-semibold text-white hover:bg-white hover:text-black transition-colors">
+                          Search Engine Optimization
+                        </Link>
+                        <Link href="#email-marketing" className="block px-6 py-3 text-[15px] font-semibold text-white hover:bg-white hover:text-black transition-colors">
+                          Email Marketing
+                        </Link>
+                        <Link href="#social-media-marketing" className="block px-6 py-3 text-[15px] font-semibold text-white hover:bg-white hover:text-black transition-colors">
+                          Social Media Marketing
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <Link href="#web-development" className="block px-6 py-3 text-[15px] font-semibold text-white hover:bg-white hover:text-black transition-colors">
+                    Web Development
+                  </Link>
+                  <Link href="#app-development" className="block px-6 py-3 text-[15px] font-semibold text-white hover:bg-white hover:text-black transition-colors">
+                    App Development
+                  </Link>
+                </div>
+              </div>
+            </div>
             <a href="#pricing" onClick={(e) => scrollToSection(e, "pricing")} className="text-zinc-300 hover:text-yellow-400 transition-colors">
               Pricing
             </a>

@@ -9,6 +9,24 @@ export default function About() {
       <div className="absolute top-1/2 -left-[10%] w-[30vw] h-[30vw] min-w-[300px] min-h-[300px] bg-yellow-500/10 rounded-full blur-[100px] pointer-events-none" />
       <div className="absolute top-1/4 -right-[10%] w-[30vw] h-[30vw] min-w-[300px] min-h-[300px] bg-amber-600/5 rounded-full blur-[100px] pointer-events-none" />
 
+      {/* ABOUT US Header Section */}
+      <div className="w-full max-w-[1200px] mx-auto mb-20 relative z-10 border border-t-0 border-white/10 rounded-b-[4rem] bg-zinc-950 overflow-hidden pt-16 pb-20 px-4 sm:px-8">
+        {/* Grid Background */}
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none"></div>
+        
+        {/* Center Glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[150px] bg-yellow-500/20 blur-[90px] rounded-full pointer-events-none" />
+        
+        <div className="relative z-10 text-center">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 uppercase tracking-wider">
+            About Us
+          </h2>
+          <p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
+            Empowering brands with innovative strategies and creative solutions, we pave the way for long-term success and growth.
+          </p>
+        </div>
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           
