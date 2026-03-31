@@ -1,81 +1,112 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { BarChart3, Globe, LineChart, Target, Zap, Layout } from "lucide-react";
+import { Globe, Smartphone, Palette, Layers, Search, MousePointerClick, Mail, Share2, TrendingUp } from "lucide-react";
 
 const services = [
   {
-    icon: <Target className="w-8 h-8 text-yellow-500" />,
-    title: "Performance Marketing",
-    description: "Data-driven paid advertising across Google, Meta, and TikTok designed to scale your ROI exponentially."
+    icon: Globe,
+    title: "Website Development",
+    description: "Bring your brand to life online with a website that's designed just for you. We build responsive, user-friendly sites that provide a smooth experience and help turn visitors into customers."
   },
   {
-    icon: <BarChart3 className="w-8 h-8 text-amber-500" />,
-    title: "Advanced SEO & Content",
-    description: "Dominate search engine rankings with semantic keywords and authoritative backlink strategies."
+    icon: Smartphone,
+    title: "App Development",
+    description: "Expand your reach with a custom-built mobile app that connects with your audience on the go. Our apps are designed to engage users and boost your business."
   },
   {
-    icon: <Layout className="w-8 h-8 text-orange-400" />,
-    title: "Conversion Rate Optimization",
-    description: "Engineering high-converting funnels and landing pages that turn idle browsers into paying customers."
+    icon: Palette,
+    title: "Graphic Design",
+    description: "Make a lasting impression with eye-catching designs that showcase your brand's personality. Whether it's for online or print, we create visuals that stand out."
   },
   {
-    icon: <Globe className="w-8 h-8 text-yellow-300" />,
-    title: "Social Media Dominance",
-    description: "Organic community building and viral campaigns that create authentic relationships with your audience."
+    icon: Layers,
+    title: "Brand Identity",
+    description: "Develop a strong, recognizable brand that resonates with your audience. We'll help shape your brand's appearance and message for long-term success."
   },
   {
-    icon: <LineChart className="w-8 h-8 text-yellow-600" />,
-    title: "B2B Lead Generation",
-    description: "Automated outbound systems and LinkedIn strategies that flood your CRM with qualified enterprise leads."
+    icon: Search,
+    title: "Search Engine Optimization",
+    description: "Boost your visibility and bring more traffic to your site with our SEO expertise. We use proven strategies to get you higher rankings and attract more potential customers."
   },
   {
-    icon: <Zap className="w-8 h-8 text-yellow-400" />,
-    title: "Growth Consulting",
-    description: "Bi-weekly strategy sessions with our elite growth hackers to identify new market opportunities."
+    icon: MousePointerClick,
+    title: "Pay Per Click (Paid Ads)",
+    description: "Accelerate your business growth with pay-per-click advertising. Our tailored PPC strategies deliver targeted traffic, increased conversions, and measurable ROI, ensuring every click counts."
+  },
+  {
+    icon: Mail,
+    title: "Email Marketing",
+    description: "Elevate your business by connecting directly with your audience through expertly designed email campaigns that deliver results."
+  },
+  {
+    icon: Share2,
+    title: "Social Media Marketing",
+    description: "Harness the power of social media to connect with your audience, grow your brand, and achieve measurable business goals."
+  },
+  {
+    icon: TrendingUp,
+    title: "Digital Marketing",
+    description: "Get your brand noticed with targeted digital marketing strategies. From SEO to social media, we help you reach the right audience and increase conversions."
   }
 ];
 
 export default function Services() {
+  const scrollToContact = () => {
+    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
-    <section id="services" className="py-24 bg-black border-t border-zinc-900 text-zinc-100 font-inter">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="services" className="py-24 bg-black border-t border-zinc-900 text-zinc-100 font-inter relative overflow-hidden">
+      {/* Background glow */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-yellow-500/5 blur-[120px] rounded-full pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-yellow-500 font-bold text-xs tracking-widest uppercase mb-4"
+          >
+            WHAT WE OFFER
+          </motion.p>
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-3xl md:text-5xl font-lexend font-extrabold tracking-tight mb-4"
+            className="text-3xl md:text-5xl font-lexend font-extrabold tracking-tight mb-4 max-w-3xl mx-auto leading-tight"
           >
-            Full-Funnel <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-amber-500">Marketing Mastery</span>
+            Elevate Your Business with Our Expert Digital Marketing Solutions
           </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-            className="text-lg text-zinc-400 max-w-2xl mx-auto"
-          >
-            We deploy multi-channel strategies engineered for one singular metric: your bottom-line revenue.
-          </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => (
             <motion.div
               key={service.title}
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               whileInView={{ opacity: 1, scale: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.6, delay: index * 0.1, ease: [0.25, 0.4, 0.25, 1] }}
-              className="bg-zinc-900 border border-zinc-800/50 p-8 rounded-2xl hover:bg-zinc-800/80 transition-all duration-300 hover:shadow-2xl hover:shadow-yellow-500/10 hover:-translate-y-2 group"
+              transition={{ duration: 0.6, delay: index * 0.08, ease: [0.25, 0.4, 0.25, 1] }}
+              className="bg-zinc-900/80 border border-zinc-800/60 p-7 rounded-2xl hover:border-yellow-500/20 transition-all duration-300 hover:shadow-xl hover:shadow-yellow-500/5 hover:-translate-y-1 group flex flex-col"
             >
-              <div className="bg-black w-16 h-16 rounded-xl flex items-center justify-center mb-6 border border-zinc-800 group-hover:border-yellow-500/30 transition-colors">
-                {service.icon}
+              {/* Icon */}
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5 border border-yellow-500/20 bg-yellow-500/5 group-hover:bg-yellow-500/10 transition-colors">
+                <service.icon className="w-6 h-6 text-yellow-500" />
               </div>
-              <h3 className="text-xl font-lexend font-bold text-white mb-3">{service.title}</h3>
-              <p className="text-zinc-400 leading-relaxed text-sm">{service.description}</p>
+
+              <h3 className="text-[16px] font-bold text-white mb-3 leading-snug">{service.title}</h3>
+              <p className="text-zinc-400 leading-relaxed text-[13px] flex-grow mb-6">{service.description}</p>
+
+              {/* Learn More Button */}
+              <button
+                onClick={scrollToContact}
+                className="w-full py-2.5 rounded-full text-[11px] font-bold uppercase tracking-widest bg-gradient-to-r from-yellow-400 via-amber-500 to-orange-500 text-zinc-950 hover:opacity-90 transition-opacity"
+              >
+                LEARN MORE
+              </button>
             </motion.div>
           ))}
         </div>
