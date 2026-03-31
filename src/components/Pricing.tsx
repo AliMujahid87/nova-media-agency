@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Rocket, TrendingUp, Target, Crown, Shield, Trophy } from "lucide-react";
+import Magnetic from "./Magnetic";
 
 export default function Pricing() {
   const handleSelect = (packageName: string) => {
@@ -214,12 +215,14 @@ export default function Pricing() {
               </div>
               
               {/* Button */}
-              <button
-                onClick={() => handleSelect(pkg.name)}
-                className="w-full py-3.5 rounded-full text-xs font-bold uppercase tracking-widest bg-gradient-to-r from-yellow-400 via-amber-500 to-orange-500 text-zinc-950 hover:opacity-90 transition-opacity shadow-lg shadow-yellow-500/10 mt-auto"
-              >
-                PURCHASE ORDER
-              </button>
+              <Magnetic>
+                <button
+                  onClick={() => handleSelect(pkg.name)}
+                  className="w-full py-3.5 px-10 rounded-full text-xs font-bold uppercase tracking-widest bg-gradient-to-r from-yellow-400 via-amber-500 to-orange-500 text-zinc-950 hover:opacity-90 transition-opacity shadow-lg shadow-yellow-500/10 mt-auto"
+                >
+                  PURCHASE ORDER
+                </button>
+              </Magnetic>
             </motion.div>
           ))}
         </div>

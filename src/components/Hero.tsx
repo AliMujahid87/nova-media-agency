@@ -2,6 +2,8 @@
 
 import { motion } from "framer-motion";
 import { Command, Zap, TrendingUp, Target, Rocket, Triangle, Hexagon, Shield, MousePointerClick, Activity } from "lucide-react";
+import Magnetic from "@/components/Magnetic";
+import LogoMarquee from "@/components/LogoMarquee";
 
 export default function Hero() {
   const scrollToContact = () => {
@@ -37,34 +39,27 @@ export default function Hero() {
               We build data-driven, high-converting digital marketing campaigns that turn clicks into loyal customers and maximize your ROI.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 mb-10 w-full sm:w-auto">
-              <button
-                onClick={scrollToContact}
-                className="w-[180px] h-[54px] bg-gradient-to-r from-yellow-400 via-amber-500 to-orange-500 text-zinc-950 font-bold rounded-full hover:opacity-90 transition-opacity shadow-lg shadow-yellow-500/20 text-lg flex items-center justify-center tracking-wide"
-              >
-                Start Scaling
-              </button>
-              <a
-                href="#portfolio"
-                className="w-[180px] h-[54px] bg-transparent text-white font-bold rounded-full hover:bg-zinc-900 transition-colors border-2 border-zinc-700 text-lg flex items-center justify-center tracking-wide"
-              >
-                View Our Work
-              </a>
+            <div className="flex flex-col sm:flex-row gap-4 mb-20 w-full sm:w-auto">
+              <Magnetic>
+                <button
+                  onClick={scrollToContact}
+                  className="w-[180px] h-[54px] bg-gradient-to-r from-yellow-400 via-amber-500 to-orange-500 text-zinc-950 font-bold rounded-full hover:opacity-90 transition-opacity shadow-lg shadow-yellow-500/20 text-lg flex items-center justify-center tracking-wide"
+                >
+                  Start Scaling
+                </button>
+              </Magnetic>
+              <Magnetic>
+                <a
+                  href="#portfolio"
+                  className="w-[180px] h-[54px] bg-transparent text-white font-bold rounded-full hover:bg-zinc-900 transition-colors border-2 border-zinc-700 text-lg flex items-center justify-center tracking-wide"
+                >
+                  View Our Work
+                </a>
+              </Magnetic>
             </div>
 
-            <div className="flex flex-col gap-3">
-              <p className="text-sm text-zinc-500 font-medium tracking-wide uppercase">Trusted by 100+ Brands Worldwide</p>
-              <div className="flex items-center gap-8 opacity-60 grayscale hover:grayscale-0 transition-all duration-300 text-zinc-400">
-                <div className="flex items-center gap-2 font-bold font-lexend text-xl">
-                  <Command className="w-6 h-6" /> TECHFLOW
-                </div>
-                <div className="hidden sm:flex items-center gap-2 font-bold font-lexend text-xl">
-                  <Triangle className="w-5 h-5 fill-current" /> LUMI
-                </div>
-                <div className="flex items-center gap-2 font-bold font-lexend text-xl">
-                  <Hexagon className="w-6 h-6" /> NEXUS
-                </div>
-              </div>
+            <div className="w-full lg:w-[150%] -ml-[5%] lg:-ml-[25%] opacity-40">
+              <LogoMarquee />
             </div>
           </motion.div>
 

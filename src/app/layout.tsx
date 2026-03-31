@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Lexend } from "next/font/google";
 import "./globals.css";
+import CustomCursor from "@/components/CustomCursor";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const lexend = Lexend({ subsets: ["latin"], variable: "--font-lexend" });
@@ -20,6 +21,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${lexend.variable} font-inter bg-primary text-slate-100 antialiased`}
       >
+        <CustomCursor />
         {children}
       </body>
     </html>

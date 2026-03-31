@@ -17,40 +17,46 @@ export default function About() {
         {/* Center Glow */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[150px] bg-yellow-500/20 blur-[90px] rounded-full pointer-events-none" />
         
-        <div className="relative z-10 text-center">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="relative z-10 text-center"
+        >
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 uppercase tracking-wider">
             About Us
           </h2>
-          <p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed font-inter">
             Empowering brands with innovative strategies and creative solutions, we pave the way for long-term success and growth.
           </p>
-        </div>
+        </motion.div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, scale: 0.9, x: -30 }}
+            whileInView={{ opacity: 1, scale: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="relative h-[400px] md:h-[500px] w-full rounded-2xl overflow-hidden shadow-2xl shadow-yellow-900/10"
+            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+            className="relative h-[400px] md:h-[500px] w-full rounded-2xl overflow-hidden shadow-2xl shadow-yellow-900/10 group"
           >
-            <div className="absolute inset-0 bg-gradient-to-tr from-yellow-500/20 to-transparent z-10MIX"></div>
+            <div className="absolute inset-0 bg-gradient-to-tr from-yellow-500/20 to-transparent z-10 opacity-60 group-hover:opacity-40 transition-opacity" />
             <Image
               src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
               alt="Our Dedicated Team"
               fill
-              className="object-cover"
+              className="object-cover grayscale hover:grayscale-0 transition-all duration-700"
             />
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
+            initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           >
             <h2 className="text-sm font-bold tracking-widest uppercase text-yellow-500 mb-2">Our Mission</h2>
             <h3 className="text-3xl md:text-5xl font-lexend font-extrabold tracking-tight mb-6 leading-tight">

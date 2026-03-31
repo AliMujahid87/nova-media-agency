@@ -56,6 +56,29 @@ export default function Services() {
     document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
   };
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30, scale: 0.95 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.8,
+        ease: [0.16, 1, 0.3, 1] as any,
+      },
+    },
+  };
+
   return (
     <section id="services" className="py-24 bg-black border-t border-zinc-900 text-zinc-100 font-inter relative overflow-hidden">
       {/* Background glow */}
@@ -82,34 +105,40 @@ export default function Services() {
           </motion.h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+        >
           {services.map((service, index) => (
             <motion.div
               key={service.title}
-              initial={{ opacity: 0, scale: 0.95, y: 20 }}
-              whileInView={{ opacity: 1, scale: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.6, delay: index * 0.08, ease: [0.25, 0.4, 0.25, 1] }}
-              className="bg-zinc-900/80 border border-zinc-800/60 p-7 rounded-2xl hover:border-yellow-500/20 transition-all duration-300 hover:shadow-xl hover:shadow-yellow-500/5 hover:-translate-y-1 group flex flex-col"
+              variants={itemVariants}
+              whileHover={{ y: -10, transition: { duration: 0.3 } }}
+              className="bg-zinc-900/80 border border-zinc-800/60 p-7 rounded-2xl hover:border-yellow-500/20 transition-all duration-300 hover:shadow-xl hover:shadow-yellow-500/5 group flex flex-col cursor-pointer relative"
             >
+              <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl" />
+              
               {/* Icon */}
               <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5 border border-yellow-500/20 bg-yellow-500/5 group-hover:bg-yellow-500/10 transition-colors">
                 <service.icon className="w-6 h-6 text-yellow-500" />
               </div>
 
-              <h3 className="text-[16px] font-bold text-white mb-3 leading-snug">{service.title}</h3>
+              <h3 className="text-[16px] font-bold text-white mb-3 leading-snug group-hover:text-yellow-500 transition-colors">{service.title}</h3>
               <p className="text-zinc-400 leading-relaxed text-[13px] flex-grow mb-6">{service.description}</p>
 
               {/* Learn More Button */}
               <button
                 onClick={scrollToContact}
-                className="w-full py-2.5 rounded-full text-[11px] font-bold uppercase tracking-widest bg-gradient-to-r from-yellow-400 via-amber-500 to-orange-500 text-zinc-950 hover:opacity-90 transition-opacity"
+                className="w-full py-2.5 rounded-full text-[11px] font-bold uppercase tracking-widest bg-zinc-800 text-white group-hover:bg-gradient-to-r group-hover:from-yellow-400 group-hover:via-amber-500 group-hover:to-orange-500 group-hover:text-zinc-950 transition-all duration-300"
               >
                 LEARN MORE
               </button>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
