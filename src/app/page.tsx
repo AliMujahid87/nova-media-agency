@@ -5,7 +5,6 @@ import Services from "@/components/Services";
 import Team from "@/components/Team";
 import Blogs from "@/components/Blogs";
 import Pricing from "@/components/Pricing";
-import Portfolio from "@/components/Portfolio";
 import ContactForm from "@/components/ContactForm";
 import FAQ from "@/components/FAQ";
 import { Toaster } from "react-hot-toast";
@@ -17,7 +16,6 @@ export default function Home() {
       <Hero />
       <About />
       <Services />
-      <Portfolio />
       <Pricing />
       <FAQ />
       <Team />
