@@ -24,9 +24,8 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-black/95 backdrop-blur-md shadow-xl" : "bg-black"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-black/95 backdrop-blur-md shadow-xl" : "bg-black"
+        }`}
     >
       {/* Top Social Bar */}
       <div className={`hidden md:flex items-center px-8 py-2 border-b border-white/5 transition-all duration-300 ${isScrolled ? 'hidden' : 'flex'}`}>
@@ -51,17 +50,17 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3">
             <div className="relative flex items-center justify-center w-10 h-10 overflow-hidden">
-               <svg viewBox="0 0 100 100" fill="none" className="w-full h-full drop-shadow-[0_2px_8px_rgba(255,184,0,0.4)]">
-                 {/* Re-creating the stylized N with a dot */}
-                 <path d="M25 80 V 45 A 15 15 0 0 1 50 35 L 75 65 A 15 15 0 0 0 95 65" stroke="url(#novaGrad)" strokeWidth="18" strokeLinecap="round" />
-                 <circle cx="78" cy="30" r="14" fill="#FFC107" />
-                 <defs>
-                   <linearGradient id="novaGrad" x1="25" y1="80" x2="80" y2="20" gradientUnits="userSpaceOnUse">
-                     <stop stopColor="#FFEA6A" />
-                     <stop offset="1" stopColor="#FF9800" />
-                   </linearGradient>
-                 </defs>
-               </svg>
+              <svg viewBox="0 0 100 100" fill="none" className="w-full h-full drop-shadow-[0_2px_8px_rgba(255,184,0,0.4)]">
+                {/* Re-creating the stylized N with a dot */}
+                <path d="M25 80 V 45 A 15 15 0 0 1 50 35 L 75 65 A 15 15 0 0 0 95 65" stroke="url(#novaGrad)" strokeWidth="18" strokeLinecap="round" />
+                <circle cx="78" cy="30" r="14" fill="#FFC107" />
+                <defs>
+                  <linearGradient id="novaGrad" x1="25" y1="80" x2="80" y2="20" gradientUnits="userSpaceOnUse">
+                    <stop stopColor="#FFEA6A" />
+                    <stop offset="1" stopColor="#FF9800" />
+                  </linearGradient>
+                </defs>
+              </svg>
             </div>
             <div className="flex flex-col">
               <span className="font-sans font-black text-2xl tracking-wide text-white leading-none">
@@ -81,7 +80,7 @@ export default function Navbar() {
             <a href="#about" onClick={(e) => scrollToSection(e, "about")} className="text-zinc-300 hover:text-yellow-400 transition-colors">
               About us
             </a>
-            
+
             <a href="#services" onClick={(e) => scrollToSection(e, "services")} className="text-zinc-300 hover:text-yellow-400 transition-colors">
               Services
             </a>
@@ -133,7 +132,7 @@ export default function Navbar() {
             <a href="#team" onClick={(e) => scrollToSection(e, "team")} className="text-xl font-medium text-white">Team</a>
             <a href="#blogs" onClick={(e) => scrollToSection(e, "blogs")} className="text-xl font-medium text-white">Blogs</a>
             <a href="#contact" onClick={(e) => scrollToSection(e, "contact")} className="text-xl font-medium text-yellow-400">Contact Us</a>
-            
+
             <a
               href="#contact"
               onClick={(e) => scrollToSection(e, "contact")}
