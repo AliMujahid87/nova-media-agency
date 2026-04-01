@@ -5,9 +5,9 @@ import Image from "next/image";
 
 const teamMembers = [
   {
-    name: "Aisha Rahman",
-    role: "Chief Growth Officer",
-    image: "/team/team-1.png",
+    name: "Hina Zaib",
+    role: "Founder & CEO",
+    image: "/team/ceo.jpeg",
   },
   {
     name: "Zainab Malik",
@@ -46,7 +46,7 @@ export default function Team() {
           </motion.p>
         </div>
 
-        <motion.div 
+        <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
