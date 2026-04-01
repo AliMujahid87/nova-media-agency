@@ -47,7 +47,24 @@ export default function Hero() {
               className="font-lexend text-5xl md:text-7xl font-extrabold tracking-tight leading-tight mb-6"
             >
               Scale Your Brand. <br />
-              <span className="text-secondary">Dominate</span> Your Market.
+              <span className="text-secondary inline-flex items-center gap-2">
+                Dominate
+                <motion.span
+                  initial={{ opacity: 0, scale: 0.5, x: -10 }}
+                  whileInView={{ opacity: 1, scale: 1, x: 0 }}
+                  transition={{
+                    duration: 0.6,
+                    delay: 0.4,
+                    ease: [0.34, 1.56, 0.64, 1]
+                  }}
+                  viewport={{ once: true }}
+                  className="inline-block"
+                >
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-yellow-500">
+                    <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </motion.span>
+              </span> Your Market.
             </motion.h1>
 
             <motion.p
