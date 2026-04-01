@@ -105,10 +105,10 @@ export default function Hero() {
               ease: [0.25, 0.1, 0.25, 1]
             }}
             viewport={{ once: true, margin: "-50px" }}
-            className="relative h-[500px] lg:h-[700px] flex items-center justify-center pt-10"
+            className="relative h-[400px] lg:h-[550px] flex items-start justify-center"
           >
             {/* The Growth Engine Container */}
-            <div className="relative w-full max-w-[600px] aspect-square flex items-center justify-center">
+            <div className="relative w-full max-w-[450px] aspect-square flex items-center justify-center">
 
               {/* Outer Glows */}
               <div className="absolute inset-0 bg-yellow-500/5 blur-[120px] rounded-full animate-pulse" />
