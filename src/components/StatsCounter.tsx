@@ -10,7 +10,7 @@ const stats = [
   { label: "Ad Spend Managed", value: 50, suffix: "M+", prefix: "$" },
 ];
 
-function Counter({ value, direction = "up" }: { value: number; direction?: "up" | "down" }) {
+function Counter({ value }: { value: number }) {
   const ref = useRef<HTMLSpanElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
@@ -58,7 +58,7 @@ export default function StatsCounter() {
               <p className="text-zinc-400 text-sm md:text-base font-medium tracking-wide uppercase">
                 {stat.label}
               </p>
-              
+
               {/* Decorative line under each stat for mobile/desktop */}
               <div className="mt-6 h-1 w-12 bg-gradient-to-r from-yellow-500/50 to-transparent rounded-full opacity-30 lg:hidden" />
             </motion.div>

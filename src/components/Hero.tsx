@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Command, Zap, TrendingUp, Target, Rocket, Triangle, Hexagon, Shield, MousePointerClick, Activity } from "lucide-react";
+import { Command, Zap, TrendingUp, Target, Rocket, Shield, Activity } from "lucide-react";
 import Magnetic from "@/components/Magnetic";
 import LogoMarquee from "@/components/LogoMarquee";
 
@@ -29,16 +29,16 @@ export default function Hero() {
             <div className="inline-block px-4 py-1.5 rounded-full bg-slate-800/80 border border-slate-700 text-sm font-medium text-slate-300 mb-6 backdrop-blur-sm">
               ✨ The New Standard of Growth
             </div>
-            
+
             <h1 className="font-lexend text-5xl md:text-7xl font-extrabold tracking-tight leading-tight mb-6">
               Scale Your Brand. <br />
               <span className="text-secondary">Dominate</span> Your Market.
             </h1>
-            
+
             <p className="text-lg md:text-xl text-slate-300 mb-8 max-w-xl font-inter leading-relaxed">
               We build data-driven, high-converting digital marketing campaigns that turn clicks into loyal customers and maximize your ROI.
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-4 mb-20 w-full sm:w-auto">
               <Magnetic>
                 <button
@@ -73,10 +73,10 @@ export default function Hero() {
           >
             {/* The Growth Engine Container */}
             <div className="relative w-full max-w-[600px] aspect-square flex items-center justify-center">
-              
+
               {/* Outer Glows */}
               <div className="absolute inset-0 bg-yellow-500/5 blur-[120px] rounded-full animate-pulse" />
-              
+
               {/* 1. THE OUTER ORBIT (Slow, Large) */}
               <motion.div
                 animate={{ rotate: 360 }}
@@ -84,7 +84,7 @@ export default function Hero() {
                 className="absolute w-[95%] h-[95%] border border-white/5 rounded-full"
               >
                 {/* Floating STRATEGY Tag */}
-                <motion.div 
+                <motion.div
                   className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-2 bg-zinc-900/80 backdrop-blur-md border border-white/10 rounded-full flex items-center gap-2 shadow-2xl"
                   animate={{ rotate: -360 }}
                   transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
@@ -94,7 +94,7 @@ export default function Hero() {
                 </motion.div>
 
                 {/* Floating DATA-DRIVEN Tag */}
-                <motion.div 
+                <motion.div
                   className="absolute -bottom-4 left-1/2 -translate-x-1/2 px-4 py-2 bg-zinc-900/80 backdrop-blur-md border border-white/10 rounded-full flex items-center gap-2 shadow-2xl"
                   initial={{ rotate: 0 }}
                   animate={{ rotate: -360 }}
@@ -112,7 +112,7 @@ export default function Hero() {
                 className="absolute w-[75%] h-[75%] border border-yellow-500/10 rounded-full"
               >
                 {/* Floating ROI Tag */}
-                <motion.div 
+                <motion.div
                   className="absolute top-1/2 -right-4 -translate-y-1/2 px-4 py-2 bg-zinc-900/80 backdrop-blur-md border border-yellow-500/20 rounded-full flex items-center gap-2 shadow-2xl"
                   animate={{ rotate: 360 }}
                   transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
@@ -122,7 +122,7 @@ export default function Hero() {
                 </motion.div>
 
                 {/* Floating SCALABILITY Tag */}
-                <motion.div 
+                <motion.div
                   className="absolute top-1/2 -left-4 -translate-y-1/2 px-4 py-2 bg-zinc-900/80 backdrop-blur-md border border-yellow-500/20 rounded-full flex items-center gap-2 shadow-2xl"
                   initial={{ rotate: 0 }}
                   animate={{ rotate: 360 }}
@@ -140,7 +140,7 @@ export default function Hero() {
                 className="absolute w-[55%] h-[55%] border border-dashed border-white/10 rounded-full"
               >
                 {/* Floating ADS Tag */}
-                <motion.div 
+                <motion.div
                   className="absolute bottom-0 left-1/2 -translate-x-1/2 -translate-y-1/2 px-4 py-2 bg-zinc-950/90 backdrop-blur-md border border-white/10 rounded-full flex items-center gap-2 shadow-xl"
                   animate={{ rotate: -360 }}
                   transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
@@ -150,7 +150,7 @@ export default function Hero() {
                 </motion.div>
 
                 {/* Floating RETENTION Tag */}
-                <motion.div 
+                <motion.div
                   className="absolute top-1/2 -left-4 -translate-y-1/2 px-4 py-2 bg-zinc-950/90 backdrop-blur-md border border-white/10 rounded-full flex items-center gap-2 shadow-xl"
                   initial={{ rotate: 0 }}
                   animate={{ rotate: -360 }}
@@ -164,15 +164,15 @@ export default function Hero() {
               {/* 4. THE CENTRAL CORE (Pulsating) */}
               <div className="relative w-32 h-32 flex items-center justify-center">
                 {/* Multi-layered Glows */}
-                <motion.div 
+                <motion.div
                   animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.6, 0.3] }}
                   transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                   className="absolute inset-0 bg-yellow-500 rounded-full blur-3xl"
                 />
                 <div className="absolute inset-0 bg-gradient-to-tr from-yellow-400 to-amber-600 rounded-3xl rotate-45 opacity-20 blur-sm" />
-                
+
                 {/* Core Brand Element */}
-                <motion.div 
+                <motion.div
                   whileHover={{ scale: 1.1, rotate: 90 }}
                   className="relative z-10 w-20 h-20 bg-zinc-900 border-2 border-yellow-500/50 rounded-3xl flex items-center justify-center shadow-[0_0_50px_rgba(234,179,8,0.3)] cursor-pointer overflow-hidden group"
                 >

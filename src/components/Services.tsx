@@ -74,7 +74,7 @@ export default function Services() {
       scale: 1,
       transition: {
         duration: 0.8,
-        ease: [0.16, 1, 0.3, 1] as any,
+        ease: [0.16, 1, 0.3, 1] as [number, number, number, number],
       },
     },
   };
@@ -105,14 +105,14 @@ export default function Services() {
           </motion.h2>
         </div>
 
-        <motion.div 
+        <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
-          {services.map((service, index) => (
+          {services.map((service) => (
             <motion.div
               key={service.title}
               variants={itemVariants}
@@ -120,7 +120,7 @@ export default function Services() {
               className="bg-zinc-900/80 border border-zinc-800/60 p-7 rounded-2xl hover:border-yellow-500/20 transition-all duration-300 hover:shadow-xl hover:shadow-yellow-500/5 group flex flex-col cursor-pointer relative"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl" />
-              
+
               {/* Icon */}
               <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5 border border-yellow-500/20 bg-yellow-500/5 group-hover:bg-yellow-500/10 transition-colors">
                 <service.icon className="w-6 h-6 text-yellow-500" />

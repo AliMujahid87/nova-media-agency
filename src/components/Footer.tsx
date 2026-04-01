@@ -1,12 +1,11 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { 
-  Globe, 
-  Share2, 
-  Mail, 
-  Phone, 
-  MapPin, 
+import {
+  Globe,
+  Share2,
+  Mail,
+  Phone,
+  MapPin,
   ChevronRight,
   Command
 } from "lucide-react";
@@ -54,10 +53,10 @@ export default function Footer() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-          
+
           {/* Logo & Brand Info */}
           <div className="flex flex-col gap-6">
-            <div 
+            <div
               className="flex items-center gap-2 text-white font-lexend font-bold text-2xl cursor-pointer"
               onClick={scrollToTop}
             >
@@ -69,7 +68,7 @@ export default function Footer() {
             <p className="text-sm leading-relaxed max-w-xs">
               Empowering brands through cutting-edge strategy and design. We turn clicks into loyal customers and maximize your ROI with data-driven marketing.
             </p>
-            
+
             {/* Social Links */}
             <div className="flex items-center gap-4">
               {socials.map((social) => (
@@ -121,8 +120,8 @@ export default function Footer() {
             <ul className="flex flex-col gap-4">
               {footerLinks.contacts.map((contact) => (
                 <li key={contact.name}>
-                  <a 
-                    href={contact.href} 
+                  <a
+                    href={contact.href}
                     className="text-sm hover:text-yellow-500 transition-colors flex items-start gap-3 group"
                   >
                     {contact.icon ? <contact.icon className="w-5 h-5 shrink-0 text-yellow-500/80 group-hover:text-yellow-500 transition-colors" /> : <div className="w-5 h-5 bg-zinc-800 rounded" />}
