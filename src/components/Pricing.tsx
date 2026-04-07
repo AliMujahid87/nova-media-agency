@@ -1,7 +1,7 @@
 "use client";
 
-import { motion, useMotionValue, useSpring, useTransform, useInView } from "framer-motion";
-import { Rocket, TrendingUp, Target, Crown, Shield, Trophy } from "lucide-react";
+import { motion, useMotionValue, useTransform, useInView } from "framer-motion";
+import { Rocket, TrendingUp, Target, Crown, Shield, Trophy, LucideIcon } from "lucide-react";
 import Magnetic from "./Magnetic";
 import { useEffect, useState, useRef } from "react";
 
@@ -15,7 +15,6 @@ const PriceCounter = ({ value }: { value: string }) => {
   useEffect(() => {
     if (!isInView) return;
 
-    let start = 0;
     const duration = 2000; // Increased to 2s for better visibility
     const startTime = performance.now();
 
@@ -40,8 +39,22 @@ const PriceCounter = ({ value }: { value: string }) => {
   return <span ref={ref}>{count.toLocaleString()}</span>;
 };
 
+interface PricingFeature {
+  title: string;
+  desc?: string;
+}
+
+interface PricingPackage {
+  icon: LucideIcon;
+  name: string;
+  subtitle: string;
+  price: string;
+  features: PricingFeature[];
+  bullets: string[];
+}
+
 // Interactive Pricing Card
-const PricingCard = ({ pkg, index }: { pkg: any; index: number }) => {
+const PricingCard = ({ pkg, index }: { pkg: PricingPackage; index: number }) => {
   const cardRef = useRef<HTMLDivElement>(null);
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
@@ -113,7 +126,7 @@ const PricingCard = ({ pkg, index }: { pkg: any; index: number }) => {
       
       {/* Features Blocks */}
       <div className="flex flex-col gap-6 w-full px-2 flex-grow mb-10">
-        {pkg.features.map((feat: any, i: number) => (
+        {pkg.features.map((feat: PricingFeature, i: number) => (
           <div key={i} className="flex flex-col items-start border-l-2 border-zinc-800 pl-4 group-hover:border-yellow-500/30 transition-colors">
             <span className="font-bold text-zinc-100 text-[14px] mb-1">{feat.title}</span>
             {feat.desc && <span className="text-[12px] text-zinc-400 leading-relaxed font-medium">{feat.desc}</span>}

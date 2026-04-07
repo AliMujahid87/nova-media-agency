@@ -20,9 +20,9 @@ export default function Preloader() {
   }, []);
 
   // Professional Easing Curves
-  const smoothEase = [0.16, 1, 0.3, 1] as [number, number, number, number]; 
-  const cinematicEase = [0.6, 0.05, -0.01, 0.9] as [number, number, number, number]; 
-  const exitEase = [0.43, 0.13, 0.23, 0.96] as [number, number, number, number]; 
+  const smoothEase = [0.16, 1, 0.3, 1] as const; 
+  const cinematicEase = [0.6, 0.05, -0.01, 0.9] as const; 
+  const exitEase = [0.43, 0.13, 0.23, 0.96] as const; 
 
   return (
     <AnimatePresence>
