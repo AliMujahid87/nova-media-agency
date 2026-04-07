@@ -85,9 +85,6 @@ export default function Navbar() {
             <a href="#services" onClick={(e) => scrollToSection(e, "services")} className="text-zinc-300 hover:text-yellow-400 transition-colors">
               Services
             </a>
-            <a href="#pricing" onClick={(e) => scrollToSection(e, "pricing")} className="text-zinc-300 hover:text-yellow-400 transition-colors">
-              Pricing
-            </a>
             <a href="#team" onClick={(e) => scrollToSection(e, "team")} className="text-zinc-300 hover:text-yellow-400 transition-colors">
               Team
             </a>
@@ -163,7 +160,6 @@ export default function Navbar() {
                 <a href="#hero" onClick={(e) => scrollToSection(e, "hero")} className="text-3xl font-lexend font-bold text-white hover:text-yellow-500 transition-colors">Home</a>
                 <a href="#about" onClick={(e) => scrollToSection(e, "about")} className="text-3xl font-lexend font-bold text-white hover:text-yellow-500 transition-colors">About Us</a>
                 <a href="#services" onClick={(e) => scrollToSection(e, "services")} className="text-3xl font-lexend font-bold text-white hover:text-yellow-500 transition-colors">Services</a>
-                <a href="#pricing" onClick={(e) => scrollToSection(e, "pricing")} className="text-3xl font-lexend font-bold text-white hover:text-yellow-500 transition-colors">Pricing</a>
                 <a href="#team" onClick={(e) => scrollToSection(e, "team")} className="text-3xl font-lexend font-bold text-white hover:text-yellow-500 transition-colors">Team</a>
                 <a href="#blogs" onClick={(e) => scrollToSection(e, "blogs")} className="text-3xl font-lexend font-bold text-white hover:text-yellow-500 transition-colors">Blogs</a>
                 <a href="#contact" onClick={(e) => scrollToSection(e, "contact")} className="text-3xl font-lexend font-bold text-yellow-500 hover:text-yellow-300 transition-colors">Contact Us</a>

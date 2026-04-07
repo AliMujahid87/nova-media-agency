@@ -28,7 +28,6 @@ export default function Footer() {
     ],
     company: [
       { name: "About Us", href: "#about" },
-      { name: "Pricing", href: "#pricing" },
       { name: "Our Team", href: "#team" },
       { name: "Blog", href: "#blogs" },
       { name: "Career", href: "#" },

@@ -6,7 +6,6 @@ import Services from "@/components/Services";
 import Testimonials from "@/components/Testimonials";
 import Team from "@/components/Team";
 import Blogs from "@/components/Blogs";
-import Pricing from "@/components/Pricing";
 import ContactForm from "@/components/ContactForm";
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
@@ -21,7 +20,6 @@ export default function Home() {
       <StatsCounter />
       <Services />
       <Testimonials />
-      <Pricing />
       <FAQ />
       <Team />
       <Blogs />
