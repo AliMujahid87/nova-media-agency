@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -78,7 +79,7 @@ export default function Navbar() {
               Home
             </a>
             <a href="#about" onClick={(e) => scrollToSection(e, "about")} className="text-zinc-300 hover:text-yellow-400 transition-colors">
-              About us
+              About Us
             </a>
 
             <a href="#services" onClick={(e) => scrollToSection(e, "services")} className="text-zinc-300 hover:text-yellow-400 transition-colors">
@@ -122,27 +123,65 @@ export default function Navbar() {
       </div>
 
       {/* Mobile Menu */}
-      {mobileMenuOpen && (
-        <div className="lg:hidden bg-black/98 backdrop-blur-xl absolute w-full border-t border-white/5 h-screen">
-          <div className="px-6 pt-6 pb-12 space-y-6 flex flex-col items-center">
-            <a href="#hero" onClick={(e) => scrollToSection(e, "hero")} className="text-xl font-medium text-white">Home</a>
-            <a href="#about" onClick={(e) => scrollToSection(e, "about")} className="text-xl font-medium text-white">About us</a>
-            <a href="#services" onClick={(e) => scrollToSection(e, "services")} className="text-xl font-medium text-white">Services</a>
-            <a href="#pricing" onClick={(e) => scrollToSection(e, "pricing")} className="text-xl font-medium text-white">Pricing</a>
-            <a href="#team" onClick={(e) => scrollToSection(e, "team")} className="text-xl font-medium text-white">Team</a>
-            <a href="#blogs" onClick={(e) => scrollToSection(e, "blogs")} className="text-xl font-medium text-white">Blogs</a>
-            <a href="#contact" onClick={(e) => scrollToSection(e, "contact")} className="text-xl font-medium text-yellow-400">Contact Us</a>
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="fixed inset-0 z-[60] bg-black/98 backdrop-blur-2xl lg:hidden"
+          >
+            <div className="flex flex-col h-full bg-zinc-950">
+              {/* Mobile Menu Header */}
+              <div className="flex items-center justify-between px-4 md:px-8 h-20 border-b border-white/5">
+                <Link href="/" className="flex items-center gap-3" onClick={() => setMobileMenuOpen(false)}>
+                  <div className="relative flex items-center justify-center w-8 h-8">
+                    <svg viewBox="0 0 100 100" fill="none" className="w-full h-full drop-shadow-[0_2px_8px_rgba(255,184,0,0.4)]">
+                      <path d="M25 80 V 45 A 15 15 0 0 1 50 35 L 75 65 A 15 15 0 0 0 95 65" stroke="url(#novaGradMobile)" strokeWidth="18" strokeLinecap="round" />
+                      <circle cx="78" cy="30" r="14" fill="#FFC107" />
+                      <defs>
+                        <linearGradient id="novaGradMobile" x1="25" y1="80" x2="80" y2="20" gradientUnits="userSpaceOnUse">
+                          <stop stopColor="#FFEA6A" />
+                          <stop offset="1" stopColor="#FF9800" />
+                        </linearGradient>
+                      </defs>
+                    </svg>
+                  </div>
+                  <span className="font-sans font-black text-xl tracking-wide text-white">NOVA</span>
+                </Link>
+                <button
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="p-2 text-zinc-400 hover:text-white bg-zinc-900 rounded-full"
+                >
+                  <X size={24} />
+                </button>
+              </div>
 
-            <a
-              href="#contact"
-              onClick={(e) => scrollToSection(e, "contact")}
-              className="mt-4 flex items-center justify-center w-full max-w-xs h-[50px] rounded-full text-zinc-950 font-bold tracking-wider bg-gradient-to-r from-yellow-300 via-yellow-400 to-amber-500"
-            >
-              GET STARTED
-            </a>
-          </div>
-        </div>
-      )}
+              {/* Mobile Menu Links */}
+              <div className="flex-1 overflow-y-auto px-6 py-12 flex flex-col items-center justify-center space-y-8">
+                <a href="#hero" onClick={(e) => scrollToSection(e, "hero")} className="text-3xl font-lexend font-bold text-white hover:text-yellow-500 transition-colors">Home</a>
+                <a href="#about" onClick={(e) => scrollToSection(e, "about")} className="text-3xl font-lexend font-bold text-white hover:text-yellow-500 transition-colors">About Us</a>
+                <a href="#services" onClick={(e) => scrollToSection(e, "services")} className="text-3xl font-lexend font-bold text-white hover:text-yellow-500 transition-colors">Services</a>
+                <a href="#pricing" onClick={(e) => scrollToSection(e, "pricing")} className="text-3xl font-lexend font-bold text-white hover:text-yellow-500 transition-colors">Pricing</a>
+                <a href="#team" onClick={(e) => scrollToSection(e, "team")} className="text-3xl font-lexend font-bold text-white hover:text-yellow-500 transition-colors">Team</a>
+                <a href="#blogs" onClick={(e) => scrollToSection(e, "blogs")} className="text-3xl font-lexend font-bold text-white hover:text-yellow-500 transition-colors">Blogs</a>
+                <a href="#contact" onClick={(e) => scrollToSection(e, "contact")} className="text-3xl font-lexend font-bold text-yellow-500 hover:text-yellow-300 transition-colors">Contact Us</a>
+
+                <div className="w-full max-w-xs pt-8">
+                  <a
+                    href="#contact"
+                    onClick={(e) => scrollToSection(e, "contact")}
+                    className="flex items-center justify-center w-full h-[60px] rounded-full text-zinc-950 font-black text-lg tracking-widest bg-gradient-to-r from-yellow-300 via-yellow-400 to-amber-500 shadow-xl shadow-yellow-500/20"
+                  >
+                    GET STARTED
+                  </a>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 }

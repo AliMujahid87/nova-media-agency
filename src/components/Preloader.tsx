@@ -20,9 +20,9 @@ export default function Preloader() {
   }, []);
 
   // Professional Easing Curves
-  const smoothEase = [0.16, 1, 0.3, 1]; // Fast start, very smooth deceleration
-  const cinematicEase = [0.6, 0.05, -0.01, 0.9]; // Elegant glide
-  const exitEase = [0.43, 0.13, 0.23, 0.96]; // Natural exit
+  const smoothEase = [0.16, 1, 0.3, 1] as [number, number, number, number]; 
+  const cinematicEase = [0.6, 0.05, -0.01, 0.9] as [number, number, number, number]; 
+  const exitEase = [0.43, 0.13, 0.23, 0.96] as [number, number, number, number]; 
 
   return (
     <AnimatePresence>
@@ -99,12 +99,11 @@ export default function Preloader() {
                   fill="#FFC107"
                   initial={{ scale: 0, opacity: 0 }}
                   animate={{ 
-                    scale: [0, 1.2, 1],
+                    scale: [1, 1.2, 1],
                     opacity: 1,
-                    boxShadow: ["0 0 20px rgba(255,193,7,0.5)", "0 0 40px rgba(255,193,7,0.8)", "0 0 20px rgba(255,193,7,0.5)"]
                   }}
                   transition={{ 
-                    scale: { duration: 1.2, delay: 0.8, ease: smoothEase, repeat: Infinity, repeatDelay: 2 },
+                    scale: { duration: 1.5, repeat: Infinity, ease: smoothEase, repeatDelay: 1 },
                     opacity: { duration: 0.5, delay: 0.8 },
                   }}
                 />
