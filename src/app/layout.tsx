@@ -7,6 +7,10 @@ const CustomCursor = dynamic(() => import("@/components/CustomCursor"), {
   ssr: false,
 });
 
+const Preloader = dynamic(() => import("@/components/Preloader"), {
+  ssr: false,
+});
+
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const lexend = Lexend({ subsets: ["latin"], variable: "--font-lexend" });
 
@@ -25,6 +29,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${lexend.variable} font-inter bg-primary text-slate-100 antialiased`}
       >
+        <Preloader />
         <CustomCursor />
         {children}
       </body>
