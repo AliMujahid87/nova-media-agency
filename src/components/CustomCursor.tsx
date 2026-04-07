@@ -60,7 +60,7 @@ const CustomCursor = () => {
   return (
     <>
       <motion.div
-        className="fixed top-0 left-0 w-8 h-8 rounded-full border-2 border-yellow-500/50 pointer-events-none z-[9999] mix-blend-difference"
+        className="hidden md:block fixed top-0 left-0 w-8 h-8 rounded-full border-2 border-yellow-500/50 pointer-events-none z-[9999] mix-blend-difference"
         style={{
           x: cursorXSpring,
           y: cursorYSpring,
@@ -75,7 +75,7 @@ const CustomCursor = () => {
         }}
       />
       <motion.div
-        className="fixed top-0 left-0 w-1.5 h-1.5 bg-yellow-400 rounded-full pointer-events-none z-[9999]"
+        className="hidden md:block fixed top-0 left-0 w-1.5 h-1.5 bg-yellow-400 rounded-full pointer-events-none z-[9999]"
         style={{
           x: cursorX,
           y: cursorY,
