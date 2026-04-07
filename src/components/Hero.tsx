@@ -75,14 +75,6 @@ export default function Hero() {
                   Start Scaling
                 </button>
               </Magnetic>
-              <Magnetic>
-                <a
-                  href="#portfolio"
-                  className="w-[180px] h-[54px] bg-transparent text-white font-bold rounded-full hover:bg-zinc-900 transition-colors border-2 border-zinc-700 text-lg flex items-center justify-center tracking-wide"
-                >
-                  View Our Work
-                </a>
-              </Magnetic>
             </motion.div>
 
             <motion.div

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <!-- Stylized N with a dot -->
+  <path d="M25 80 V 45 A 15 15 0 0 1 50 35 L 75 65 A 15 15 0 0 0 95 65" stroke="url(#novaGrad)" stroke-width="18" stroke-linecap="round" />
+  <circle cx="78" cy="30" r="14" fill="#FFC107" />
+  <defs>
+    <linearGradient id="novaGrad" x1="25" y1="80" x2="80" y2="20" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFEA6A" />
+      <stop offset="1" stop-color="#FF9800" />
+    </linearGradient>
+  </defs>
+</svg>
