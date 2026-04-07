@@ -34,16 +34,16 @@ export default function Footer() {
       { name: "Career", href: "#" },
     ],
     contacts: [
-      { name: "hello@novamedia.com", icon: Mail, href: "mailto:hello@novamedia.com" },
-      { name: "+971 4 123 4567", icon: Phone, href: "tel:+97141234567" },
-      { name: "World Trade Centre, Dubai, UAE", icon: MapPin, href: "#" },
+      { name: "novamediaagency26@gmail.com", icon: Mail, href: "mailto:novamediaagency26@gmail.com" },
+      { name: "+852 4677 8153", icon: Phone, href: "tel:+85246778153" },
+      { name: "8th Floor, Asia Standard Tower, 59-65 Queen's Road Central, Hong Kong", icon: MapPin, href: "https://maps.google.com/?q=Asia+Standard+Tower+59-65+Queen's+Road+Central+Hong+Kong" },
     ]
   };
 
   const socials = [
-    { icon: Globe, href: "#", name: "Instagram" },
-    { icon: Share2, href: "#", name: "LinkedIn" },
-    { icon: Mail, href: "#", name: "X (Twitter)" },
+    { icon: Globe, href: "https://www.instagram.com/thenovamediaagency?igsh=MXg0eXBsMmtnYW1xbA==", name: "Instagram" },
+    { icon: Share2, href: "https://www.linkedin.com/company/the-nova-media-agency/", name: "LinkedIn" },
+    { icon: Mail, href: "mailto:novamediaagency26@gmail.com", name: "Email" },
   ];
 
   return (

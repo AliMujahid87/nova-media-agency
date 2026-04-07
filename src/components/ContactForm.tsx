@@ -69,19 +69,19 @@ export default function ContactForm() {
     {
       icon: MapPin,
       label: "HEAD OFFICE",
-      value: "Elite Business Center Building, Offices #410-412, Al Barsha 1, Dubai",
+      value: "8th Floor, Asia Standard Tower, 59-65 Queen's Road Central, Hong Kong",
     },
     {
       icon: Mail,
       label: "EMAIL SUPPORT",
-      value: "info@mydedicatedmarketers.com",
-      href: "mailto:info@mydedicatedmarketers.com",
+      value: "novamediaagency26@gmail.com",
+      href: "mailto:novamediaagency26@gmail.com",
     },
     {
       icon: Phone,
       label: "LET'S TALK",
-      value: "+971 58 624 0820",
-      href: "tel:+971586240820",
+      value: "+852 4677 8153",
+      href: "tel:+85246778153",
     },
     {
       icon: Clock,
@@ -145,25 +145,17 @@ export default function ContactForm() {
             {/* Social Media */}
             <p className="text-white font-semibold text-[15px] mb-4">Follow our social media</p>
             <div className="flex items-center gap-3">
-              {/* Facebook */}
-              <a href="#" className="w-9 h-9 rounded-full bg-white flex items-center justify-center hover:bg-yellow-400 transition-colors group">
-                <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 text-black"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-              </a>
               {/* Instagram */}
-              <a href="#" className="w-9 h-9 rounded-full bg-white flex items-center justify-center hover:bg-yellow-400 transition-colors group">
+              <a href="https://www.instagram.com/thenovamediaagency?igsh=MXg0eXBsMmtnYW1xbA==" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-white flex items-center justify-center hover:bg-yellow-400 transition-colors group">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 text-black"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
               </a>
-              {/* TikTok/Other */}
-              <a href="#" className="w-9 h-9 rounded-full bg-white flex items-center justify-center hover:bg-yellow-400 transition-colors group">
-                <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 text-black"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.32 6.32 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.77a4.85 4.85 0 0 1-1.01-.08z"/></svg>
-              </a>
               {/* LinkedIn */}
-              <a href="#" className="w-9 h-9 rounded-full bg-white flex items-center justify-center hover:bg-yellow-400 transition-colors group">
+              <a href="https://www.linkedin.com/company/the-nova-media-agency/" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-white flex items-center justify-center hover:bg-yellow-400 transition-colors group">
                 <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 text-black"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
               </a>
-              {/* YouTube */}
-              <a href="#" className="w-9 h-9 rounded-full bg-white flex items-center justify-center hover:bg-yellow-400 transition-colors group">
-                <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 text-black"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33 2.78 2.78 0 0 0 1.94 2c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
+              {/* Email */}
+              <a href="mailto:novamediaagency26@gmail.com" className="w-9 h-9 rounded-full bg-white flex items-center justify-center hover:bg-yellow-400 transition-colors group">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 text-black"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
               </a>
             </div>
           </motion.div>
