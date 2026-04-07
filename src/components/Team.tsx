@@ -22,6 +22,18 @@ const teamMembers = [
     image: "/team/amna-aslam.jpeg",
     objectPosition: "center 20%",
   },
+  {
+    name: "Ali Mujahid",
+    role: "Agentic AI Developer & Web Developer",
+    image: "/team/ali-mujahid.jpeg",
+    objectPosition: "center top",
+  },
+  {
+    name: "Kashaf Noor",
+    role: "Graphic Designer",
+    image: "/team/kashaf-noor.png",
+    objectPosition: "center top",
+  },
 ];
 
 export default function Team() {
@@ -57,7 +69,7 @@ export default function Team() {
             hidden: { opacity: 0 },
             visible: { opacity: 1, transition: { staggerChildren: 0.15 } },
           }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8"
+          className="flex flex-wrap justify-center gap-8"
         >
           {teamMembers.map((member) => (
             <motion.div
@@ -67,7 +79,7 @@ export default function Team() {
                 visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
               }}
               whileHover={{ y: -8 }}
-              className="group relative rounded-2xl overflow-hidden bg-zinc-900/50 border border-zinc-800 hover:border-yellow-500/50 transition-all duration-300 cursor-pointer"
+              className="w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] max-w-sm group relative rounded-2xl overflow-hidden bg-zinc-900/50 border border-zinc-800 hover:border-yellow-500/50 transition-all duration-300 cursor-pointer"
             >
               <div className="absolute inset-0 bg-gradient-to-t from-yellow-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-10 pointer-events-none" />
               <div className="relative h-80 w-full overflow-hidden">

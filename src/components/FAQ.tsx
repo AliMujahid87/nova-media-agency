@@ -42,7 +42,7 @@ export default function FAQ() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="sticky top-32"
+            className="lg:sticky lg:top-32"
           >
             <p className="text-yellow-500 font-bold text-xs tracking-widest uppercase mb-4">
               COMMON QUESTIONS
