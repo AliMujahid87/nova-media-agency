@@ -1,49 +1,42 @@
-"use client";
+﻿"use client";
 
 import { motion } from "framer-motion";
 import { Star, Quote } from "lucide-react";
-import Image from "next/image";
 
 const testimonials = [
   {
     name: "Sarah Mitchell",
     role: "CEO, BrightEdge Retail",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=256&q=80",
     text: "Nova Media Agency completely transformed our online presence. Their team delivered a stunning website and a digital marketing strategy that tripled our leads in just three months. Highly recommended!",
     rating: 5,
   },
   {
     name: "James Patel",
     role: "Founder, UrbanFit Apparel",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=256&q=80",
     text: "Working with Nova has been a game-changer. Their branding expertise gave us a fresh identity that truly resonates with our audience. Sales have never been better.",
     rating: 5,
   },
   {
     name: "Emily Chen",
     role: "Marketing Director, Solaris Tech",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=256&q=80",
     text: "From SEO to social media management, Nova handles it all with precision. Their data-driven approach and creative flair set them apart from every other agency we've worked with.",
     rating: 5,
   },
   {
     name: "David Okafor",
     role: "Co-Founder, GreenLeaf Organics",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=256&q=80",
     text: "Nova Media Agency built us an e-commerce platform that's fast, beautiful, and easy to manage. Our conversion rate jumped 40% within the first month of launch.",
     rating: 5,
   },
   {
     name: "Rachel Gomez",
     role: "Owner, Bella Vista Photography",
-    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=256&q=80",
     text: "The team at Nova is incredibly talented and genuinely cares about their clients' success. They designed a portfolio site that perfectly showcases my work and attracts new bookings weekly.",
     rating: 5,
   },
   {
     name: "Michael Torres",
     role: "CTO, NexGen Solutions",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=256&q=80",
     text: "Their app development skills are top-notch. Nova delivered a polished, user-friendly mobile app ahead of schedule. Communication was seamless throughout the entire project.",
     rating: 5,
   },
@@ -108,7 +101,7 @@ export default function Testimonials() {
             transition={{ duration: 0.8, delay: 0.1 }}
             className="text-zinc-400 text-sm md:text-base max-w-2xl mx-auto"
           >
-            Don&apos;t just take our word for it — hear from the brands and
+            Don&apos;t just take our word for it ΓÇö hear from the brands and
             businesses that trust Nova to deliver results.
           </motion.p>
         </div>
@@ -151,13 +144,11 @@ export default function Testimonials() {
 
               {/* Author */}
               <div className="flex items-center gap-3 relative z-10">
-                <div className="relative w-10 h-10 rounded-full overflow-hidden border border-yellow-500/20">
-                  <Image
-                    src={testimonial.image}
-                    alt={testimonial.name}
-                    fill
-                    className="object-cover"
-                  />
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-yellow-400 via-amber-500 to-orange-500 flex items-center justify-center text-zinc-950 font-bold text-sm">
+                  {testimonial.name
+                    .split(" ")
+                    .map((n) => n[0])
+                    .join("")}
                 </div>
                 <div>
                   <p className="text-white font-bold text-sm group-hover:text-yellow-500 transition-colors">
