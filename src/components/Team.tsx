@@ -8,16 +8,19 @@ const teamMembers = [
     name: "Hina Zaib",
     role: "Founder & CEO",
     image: "/team/ceo.jpeg",
+    objectPosition: "center top",
   },
   {
-    name: "Zainab Malik",
-    role: "Head of Strategy",
-    image: "/team/team-2.png",
+    name: "Nida Jameel",
+    role: "Director",
+    image: "/team/nida-jameel.jpeg",
+    objectPosition: "center top",
   },
   {
-    name: "Nadia Hussain",
-    role: "Director of Paid Media",
-    image: "/team/team-3.png",
+    name: "Amna Aslam",
+    role: "Head of Operation",
+    image: "/team/amna-aslam.jpeg",
+    objectPosition: "center 20%",
   },
 ];
 
@@ -73,6 +76,7 @@ export default function Team() {
                   alt={member.name}
                   fill
                   className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                  style={{ objectPosition: member.objectPosition }}
                 />
               </div>
               <div className="p-6 text-center">

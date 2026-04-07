@@ -57,8 +57,6 @@ const CustomCursor = () => {
     };
   }, [cursorX, cursorY, isVisible]);
 
-  if (typeof window === "undefined") return null;
-
   return (
     <>
       <motion.div
