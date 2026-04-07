@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    cursor: default;
+  }
+  
+  ::selection {
+    background-color: rgba(255, 193, 7, 0.3);
+    color: white;
+  }
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;

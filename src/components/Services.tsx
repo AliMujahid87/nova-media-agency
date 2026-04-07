@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Globe, Smartphone, Palette, Layers, Search, MousePointerClick, Mail, Share2, TrendingUp } from "lucide-react";
+import { Globe, Smartphone, Palette, Layers, Search, MousePointerClick, Mail, Share2, TrendingUp, Bot, LayoutDashboard, Zap as ZapIcon } from "lucide-react";
 
 const services = [
   {
@@ -48,6 +48,21 @@ const services = [
     icon: TrendingUp,
     title: "Digital Marketing",
     description: "Get your brand noticed with targeted digital marketing strategies. From SEO to social media, we help you reach the right audience and increase conversions."
+  },
+  {
+    icon: Bot,
+    title: "AI-Powered Websites",
+    description: "Smart websites with integrated chatbots, AI-driven personalization, and automated workflows to enhance user engagement and 24/7 customer support."
+  },
+  {
+    icon: LayoutDashboard,
+    title: "Custom Web Apps",
+    description: "Bespoke dashboards, admin panels, and complex workflow automation tools designed to streamline your business operations and internal processes."
+  },
+  {
+    icon: ZapIcon,
+    title: "Landing Page Optimization",
+    description: "We build ultra-fast, high-converting landing pages focused on a single call-to-action to maximize your marketing campaign's lead generation and ROI."
   }
 ];
 

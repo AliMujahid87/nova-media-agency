@@ -1,15 +1,150 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useSpring, useTransform, useInView } from "framer-motion";
 import { Rocket, TrendingUp, Target, Crown, Shield, Trophy } from "lucide-react";
 import Magnetic from "./Magnetic";
+import { useEffect, useState, useRef } from "react";
 
-export default function Pricing() {
+// Counter Component for Animated Prices
+const PriceCounter = ({ value }: { value: string }) => {
+  const [count, setCount] = useState(0);
+  const ref = useRef<HTMLSpanElement>(null);
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const target = parseInt(value.replace(/,/g, ""));
+
+  useEffect(() => {
+    if (!isInView) return;
+
+    let start = 0;
+    const duration = 2000; // Increased to 2s for better visibility
+    const startTime = performance.now();
+
+    const animate = (currentTime: number) => {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      
+      // Easing function for counter
+      const easeOutExpo = 1 - Math.pow(2, -10 * progress);
+      const currentCount = Math.floor(easeOutExpo * target);
+      
+      setCount(currentCount);
+
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      }
+    };
+
+    requestAnimationFrame(animate);
+  }, [target, isInView]);
+
+  return <span ref={ref}>{count.toLocaleString()}</span>;
+};
+
+// Interactive Pricing Card
+const PricingCard = ({ pkg, index }: { pkg: any; index: number }) => {
+  const cardRef = useRef<HTMLDivElement>(null);
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!cardRef.current) return;
+    const rect = cardRef.current.getBoundingClientRect();
+    mouseX.set(e.clientX - rect.left);
+    mouseY.set(e.clientY - rect.top);
+  };
+
   const handleSelect = (packageName: string) => {
     window.dispatchEvent(new CustomEvent("selectPackage", { detail: packageName }));
     document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
   };
 
+  const isPremium = pkg.name.includes("ELITE") || pkg.name.includes("PREMIUM");
+
+  return (
+    <motion.div
+      ref={cardRef}
+      onMouseMove={handleMouseMove}
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8, delay: index * 0.1 }}
+      className={`group relative rounded-3xl p-8 flex flex-col items-center border transition-all duration-500 overflow-hidden ${
+        isPremium 
+        ? "bg-zinc-950 border-yellow-500/20 shadow-[0_0_40px_rgba(255,193,7,0.05)]" 
+        : "bg-[#0a0a0a] border-white/5"
+      } hover:border-yellow-500/40`}
+    >
+      {/* Interactive Hover Glow */}
+      <motion.div
+        className="absolute -inset-px opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+        style={{
+          background: useTransform(
+            [mouseX, mouseY],
+            ([x, y]) => `radial-gradient(400px circle at ${x}px ${y}px, rgba(255,193,7,0.1), transparent 40%)`
+          )
+        }}
+      />
+
+      {isPremium && (
+        <div className="absolute top-4 right-6">
+          <div className="px-3 py-1 bg-yellow-500/10 border border-yellow-500/20 rounded-full">
+            <span className="text-[9px] font-black text-yellow-500 uppercase tracking-tighter">Most Popular</span>
+          </div>
+        </div>
+      )}
+
+      {/* Top Icon with Background Glow */}
+      <div className="relative mb-6">
+        <div className="absolute inset-0 bg-yellow-500/20 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
+        <pkg.icon size={48} className="text-yellow-500 stroke-[1] relative z-10 group-hover:scale-110 transition-transform duration-500" />
+      </div>
+      
+      {/* Header Info */}
+      <h3 className="text-xl font-lexend font-extrabold tracking-tight mb-2 text-center text-white">{pkg.name}</h3>
+      <p className="text-[10px] text-zinc-500 tracking-[0.3em] uppercase mb-8 text-center font-bold px-4 py-1 bg-white/5 rounded-full">{pkg.subtitle}</p>
+      
+      <div className="flex items-end justify-center mb-10 relative w-full border-b border-white/5 pb-8">
+        <span className="text-[10px] text-yellow-500 font-black mr-2 mb-2 tracking-widest">AED</span>
+        <span className="text-5xl leading-none font-black font-lexend text-white">
+          <PriceCounter value={pkg.price} />
+        </span>
+        <span className="text-[10px] text-zinc-500 font-bold ml-2 mb-2 tracking-widest uppercase">/Mo</span>
+      </div>
+      
+      {/* Features Blocks */}
+      <div className="flex flex-col gap-6 w-full px-2 flex-grow mb-10">
+        {pkg.features.map((feat: any, i: number) => (
+          <div key={i} className="flex flex-col items-start border-l-2 border-zinc-800 pl-4 group-hover:border-yellow-500/30 transition-colors">
+            <span className="font-bold text-zinc-100 text-[14px] mb-1">{feat.title}</span>
+            {feat.desc && <span className="text-[12px] text-zinc-400 leading-relaxed font-medium">{feat.desc}</span>}
+          </div>
+        ))}
+      </div>
+      
+      {/* Bulltes */}
+      <div className="w-full flex flex-col gap-3.5 mb-10 pl-2">
+        {pkg.bullets.map((bullet: string, i: number) => (
+          <div key={i} className="flex items-center gap-3">
+            <div className={`w-1.5 h-1.5 rounded-full transition-colors ${isPremium ? 'bg-yellow-500' : 'bg-zinc-700'} group-hover:bg-yellow-500`} />
+            <span className="text-[13px] text-zinc-400 group-hover:text-zinc-200 transition-colors font-medium">{bullet}</span>
+          </div>
+        ))}
+      </div>
+      
+      {/* Button */}
+      <Magnetic>
+        <button
+          onClick={() => handleSelect(pkg.name)}
+          className="w-full py-4 px-10 rounded-full text-[11px] font-black uppercase tracking-[0.2em] transition-all duration-300 shadow-xl bg-yellow-500 text-zinc-950 hover:bg-white hover:text-zinc-950 active:scale-95 shadow-yellow-500/10"
+        >
+          SELECT PACKAGE
+        </button>
+      </Magnetic>
+    </motion.div>
+  );
+};
+
+export default function Pricing() {
   const packages = [
     {
       icon: Rocket,
@@ -138,92 +273,44 @@ export default function Pricing() {
   ];
 
   return (
-    <section id="pricing" className="py-24 bg-black border-t border-zinc-900 text-white font-inter relative">
+    <section id="pricing" className="py-24 bg-[#050505] border-t border-zinc-900 text-white font-inter relative overflow-hidden">
+      {/* Background Polish */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-yellow-500/5 blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-amber-600/5 blur-[120px] rounded-full pointer-events-none" />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-16">
-          <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
+        <div className="text-center mb-20">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="text-yellow-500 font-bold text-xs tracking-widest uppercase mb-4"
+            className="inline-block px-4 py-1.5 rounded-full bg-zinc-900 border border-zinc-800 text-[10px] font-black text-yellow-500 tracking-[0.2em] uppercase mb-6"
           >
             PRICING PLAN
-          </motion.p>
+          </motion.div>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-3xl md:text-5xl font-lexend font-extrabold tracking-tight mb-6 max-w-4xl mx-auto leading-tight"
+            className="text-4xl md:text-6xl font-lexend font-black tracking-tighter mb-8 max-w-4xl mx-auto leading-none"
           >
-            Maximize Your ROI with Our<br />Customized Marketing Packages
+            Maximize Your ROI with<br />Expert <span className="text-yellow-500">Marketing</span> Packages
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="text-lg text-slate-300 max-w-2xl mx-auto"
+            className="text-lg text-zinc-500 max-w-2xl mx-auto font-medium"
           >
             Choose the perfect marketing package tailored to your business goals and watch your success unfold.
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch max-w-[1200px] mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch max-w-[1240px] mx-auto">
           {packages.map((pkg, index) => (
-            <motion.div
-              key={pkg.name}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: index * 0.1 }}
-              className="bg-[#100d14] rounded-2xl p-8 flex flex-col items-center border border-white/5 relative group hover:border-yellow-500/20 transition-all shadow-xl hover:shadow-yellow-900/10"
-            >
-              {/* Top Icon */}
-              <div className="mb-4">
-                <pkg.icon size={42} className="text-yellow-500 stroke-[1.2]" />
-              </div>
-              
-              {/* Header Info */}
-              <h3 className="text-[17px] font-bold tracking-wider mb-2 text-center">{pkg.name}</h3>
-              <p className="text-[11px] text-slate-400 tracking-widest uppercase mb-8 text-center">{pkg.subtitle}</p>
-              
-              <div className="flex items-end justify-center mb-8 relative w-full border-b border-white/5 pb-8">
-                <span className="text-[10px] text-yellow-500 font-bold -rotate-90 relative top-1 origin-right transform tracking-widest">AED</span>
-                <span className="text-[2.8rem] leading-none font-extrabold font-lexend ml-1 mr-2">{pkg.price}</span>
-                <span className="text-[9px] text-yellow-500 font-bold mb-2 tracking-widest uppercase">/MONTHLY</span>
-              </div>
-              
-              {/* Features Blocks */}
-              <div className="flex flex-col gap-6 w-full text-center px-2 flex-grow mb-10">
-                {pkg.features.map((feat, i) => (
-                  <div key={i} className="flex flex-col items-center">
-                    <span className="font-bold text-white text-[15px] mb-1.5">{feat.title}</span>
-                    {feat.desc && <span className="text-[13px] text-slate-400 leading-relaxed whitespace-pre-line">{feat.desc}</span>}
-                  </div>
-                ))}
-              </div>
-              
-              {/* Bulltes */}
-              <div className="w-full flex flex-col gap-3.5 mb-10 pl-2">
-                {pkg.bullets.map((bullet, i) => (
-                  <div key={i} className="flex items-center gap-3">
-                    <div className="w-[5px] h-[5px] rounded-full bg-yellow-500 shrink-0" />
-                    <span className="text-[13px] text-slate-300 tracking-wide">{bullet}</span>
-                  </div>
-                ))}
-              </div>
-              
-              {/* Button */}
-              <Magnetic>
-                <button
-                  onClick={() => handleSelect(pkg.name)}
-                  className="w-full py-3.5 px-10 rounded-full text-xs font-bold uppercase tracking-widest bg-gradient-to-r from-yellow-400 via-amber-500 to-orange-500 text-zinc-950 hover:opacity-90 transition-opacity shadow-lg shadow-yellow-500/10 mt-auto"
-                >
-                  PURCHASE ORDER
-                </button>
-              </Magnetic>
-            </motion.div>
+            <PricingCard key={pkg.name} pkg={pkg} index={index} />
           ))}
         </div>
       </div>
