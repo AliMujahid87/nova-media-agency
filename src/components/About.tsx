@@ -45,7 +45,7 @@ export default function About() {
           >
             <div className="absolute inset-0 bg-gradient-to-tr from-yellow-500/20 to-transparent z-10 opacity-60 group-hover:opacity-40 transition-opacity" />
             <Image
-              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+              src="/about-team.png"
               alt="Our Dedicated Team"
               fill
               className="object-cover grayscale hover:grayscale-0 transition-all duration-700"
