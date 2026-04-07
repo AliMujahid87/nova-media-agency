@@ -52,10 +52,6 @@ const services = [
 ];
 
 export default function Services() {
-  const scrollToContact = () => {
-    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
-  };
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -127,15 +123,7 @@ export default function Services() {
               </div>
 
               <h3 className="text-[16px] font-bold text-white mb-3 leading-snug group-hover:text-yellow-500 transition-colors">{service.title}</h3>
-              <p className="text-zinc-400 leading-relaxed text-[13px] flex-grow mb-6">{service.description}</p>
-
-              {/* Learn More Button */}
-              <button
-                onClick={scrollToContact}
-                className="w-full py-2.5 rounded-full text-[11px] font-bold uppercase tracking-widest bg-zinc-800 text-white group-hover:bg-gradient-to-r group-hover:from-yellow-400 group-hover:via-amber-500 group-hover:to-orange-500 group-hover:text-zinc-950 transition-all duration-300"
-              >
-                LEARN MORE
-              </button>
+              <p className="text-zinc-400 leading-relaxed text-[13px] flex-grow">{service.description}</p>
             </motion.div>
           ))}
         </motion.div>
