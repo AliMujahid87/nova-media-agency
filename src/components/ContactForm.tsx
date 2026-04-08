@@ -20,7 +20,7 @@ const formSchema = z.object({
 type FormData = z.infer<typeof formSchema>;
 
 const inputClass =
-  "w-full bg-zinc-800/60 border border-zinc-700 rounded-lg px-4 py-3 text-white placeholder-zinc-500 focus:outline-none focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500 transition-colors text-sm";
+  "w-full bg-zinc-800/60 border border-zinc-700 rounded-lg px-5 py-4 text-white placeholder-zinc-500 focus:outline-none focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500 transition-colors text-base sm:text-sm";
 
 export default function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -167,7 +167,7 @@ export default function ContactForm() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="bg-zinc-900/80 p-8 rounded-2xl shadow-2xl border border-zinc-800"
+            className="bg-zinc-900/80 px-6 py-10 sm:p-10 rounded-2xl shadow-2xl border border-zinc-800"
           >
             <h3 className="text-2xl font-bold font-lexend mb-2">Send us a message</h3>
             <p className="text-zinc-400 text-[13px] mb-7 leading-relaxed">
