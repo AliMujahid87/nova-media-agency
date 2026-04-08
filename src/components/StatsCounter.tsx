@@ -1,7 +1,7 @@
 "use client";
 
-import { motion, useInView, useSpring, useTransform } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { motion } from "framer-motion";
+import Counter from "@/components/Counter";
 
 const stats = [
   { label: "Revenue Generated", value: 100, suffix: "M+", prefix: "$" },
@@ -9,29 +9,6 @@ const stats = [
   { label: "Client Retention", value: 94, suffix: "%" },
   { label: "Ad Spend Managed", value: 50, suffix: "M+", prefix: "$" },
 ];
-
-function Counter({ value }: { value: number }) {
-  const ref = useRef<HTMLSpanElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-
-  const spring = useSpring(0, {
-    mass: 1,
-    stiffness: 100,
-    damping: 30,
-  });
-
-  const display = useTransform(spring, (current) =>
-    Math.round(current).toLocaleString()
-  );
-
-  useEffect(() => {
-    if (isInView) {
-      spring.set(value);
-    }
-  }, [isInView, spring, value]);
-
-  return <motion.span ref={ref}>{display}</motion.span>;
-}
 
 export default function StatsCounter() {
   return (
