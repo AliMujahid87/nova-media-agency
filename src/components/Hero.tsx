@@ -27,7 +27,7 @@ export default function Hero() {
               ease: [0.25, 0.1, 0.25, 1]
             }}
             viewport={{ once: true, margin: "-50px" }}
-            className="flex flex-col items-start"
+            className="flex flex-col items-center lg:items-start text-center lg:text-left"
           >
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -55,7 +55,7 @@ export default function Hero() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
               viewport={{ once: true }}
-              className="text-lg md:text-xl text-slate-300 mb-8 max-w-xl font-inter leading-relaxed"
+              className="text-lg md:text-xl text-slate-300 mb-8 max-w-xl font-inter leading-relaxed mx-auto lg:mx-0"
             >
               We build data-driven, high-converting digital marketing campaigns that turn clicks into loyal customers and maximize your ROI.
             </motion.p>
@@ -65,7 +65,7 @@ export default function Hero() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
               viewport={{ once: true }}
-              className="flex flex-col sm:flex-row gap-4 mb-20 w-full sm:w-auto"
+              className="flex flex-col sm:flex-row gap-4 mb-20 w-full sm:w-auto items-center lg:items-start"
             >
               <Magnetic>
                 <button

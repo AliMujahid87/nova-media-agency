@@ -42,7 +42,7 @@ export default function FAQ() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="lg:sticky lg:top-32"
+            className="lg:sticky lg:top-32 flex flex-col items-center lg:items-start text-center lg:text-left"
           >
             <p className="text-yellow-500 font-bold text-xs tracking-widest uppercase mb-4">
               COMMON QUESTIONS
@@ -80,9 +80,9 @@ export default function FAQ() {
                 >
                   <button 
                     onClick={() => setOpenIndex(isOpen ? -1 : index)} 
-                    className="w-full flex items-center justify-between p-6 text-left hover:bg-zinc-800/50 transition-colors"
+                    className="w-full flex items-center justify-between p-6 text-center lg:text-left hover:bg-zinc-800/50 transition-colors"
                   >
-                    <span className="font-semibold text-[15px] text-zinc-100 pr-8 leading-snug">{item.q}</span>
+                    <span className="font-semibold text-[15px] text-zinc-100 lg:pr-8 leading-snug w-full">{item.q}</span>
                     <ChevronDown className={`w-5 h-5 text-zinc-400 shrink-0 transition-transform duration-300 ${isOpen ? 'rotate-180 text-yellow-500' : ''}`} />
                   </button>
                   <AnimatePresence>

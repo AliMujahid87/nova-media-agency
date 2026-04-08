@@ -125,7 +125,7 @@ export default function Testimonials() {
               key={testimonial.name}
               variants={itemVariants}
               whileHover={{ y: -8, transition: { duration: 0.3 } }}
-              className="bg-zinc-900/80 border border-zinc-800/60 p-7 rounded-2xl hover:border-yellow-500/20 transition-all duration-300 hover:shadow-xl hover:shadow-yellow-500/5 group flex flex-col relative"
+              className="bg-zinc-900/80 border border-zinc-800/60 p-7 rounded-2xl hover:border-yellow-500/20 transition-all duration-300 hover:shadow-xl hover:shadow-yellow-500/5 group flex flex-col items-center lg:items-start text-center lg:text-left relative"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl" />
 
@@ -135,7 +135,7 @@ export default function Testimonials() {
               </div>
 
               {/* Stars */}
-              <div className="flex gap-1 mb-4 relative z-10">
+              <div className="flex gap-1 mb-4 relative z-10 justify-center lg:justify-start">
                 {Array.from({ length: testimonial.rating }).map((_, i) => (
                   <Star
                     key={i}
@@ -150,7 +150,7 @@ export default function Testimonials() {
               </p>
 
               {/* Author */}
-              <div className="flex items-center gap-3 relative z-10">
+              <div className="flex flex-col lg:flex-row items-center gap-3 relative z-10">
                 <div className="relative w-10 h-10 rounded-full overflow-hidden border border-yellow-500/20">
                   <Image
                     src={testimonial.image}
@@ -159,7 +159,7 @@ export default function Testimonials() {
                     className="object-cover"
                   />
                 </div>
-                <div>
+                <div className="text-center lg:text-left">
                   <p className="text-white font-bold text-sm group-hover:text-yellow-500 transition-colors">
                     {testimonial.name}
                   </p>

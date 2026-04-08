@@ -101,6 +101,7 @@ export default function ContactForm() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
+            className="flex flex-col items-center lg:items-start text-center lg:text-left"
           >
             <p className="text-yellow-500 font-bold text-xs tracking-widest uppercase mb-4">
               GET IN TOUCH
@@ -115,13 +116,13 @@ export default function ContactForm() {
             <div className="border-t border-zinc-800 mb-8" />
 
             {/* Info Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10 w-full">
               {contactInfo.map((item, i) => (
-                <div key={i} className="flex items-start gap-4">
+                <div key={i} className="flex flex-col lg:flex-row items-center lg:items-start gap-4 text-center lg:text-left">
                   <div className="flex-shrink-0 w-10 h-10 rounded-full bg-yellow-500/10 border border-yellow-500/20 flex items-center justify-center">
                     <item.icon className="w-4 h-4 text-yellow-500" />
                   </div>
-                  <div>
+                  <div className="flex flex-col items-center lg:items-start">
                     <p className="text-[10px] font-bold tracking-widest uppercase text-yellow-500 mb-1">
                       {item.label}
                     </p>
@@ -144,7 +145,7 @@ export default function ContactForm() {
 
             {/* Social Media */}
             <p className="text-white font-semibold text-[15px] mb-4">Follow our social media</p>
-            <div className="flex items-center gap-3">
+            <div className="flex items-center justify-center lg:justify-start gap-3">
               {/* Instagram */}
               <a href="https://www.instagram.com/thenovamediaagency?igsh=MXg0eXBsMmtnYW1xbA==" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-white flex items-center justify-center hover:bg-yellow-400 transition-colors group">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 text-black"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>

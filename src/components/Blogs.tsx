@@ -69,7 +69,7 @@ export default function Blogs() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: index * 0.1 }}
-              className="group cursor-pointer"
+              className="group cursor-pointer flex flex-col items-center lg:items-start text-center lg:text-left"
             >
               <div className="relative h-56 w-full rounded-xl overflow-hidden mb-5 border border-zinc-800">
                 <Image
@@ -96,7 +96,7 @@ export default function Blogs() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: 0.3 + index * 0.1 }}
-              className="group cursor-pointer"
+              className="group cursor-pointer flex flex-col items-center lg:items-start text-center lg:text-left"
             >
               <h3 className="text-[15px] font-bold text-white mb-3 group-hover:text-yellow-400 transition-colors leading-snug">
                 {post.title}

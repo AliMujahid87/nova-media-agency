@@ -54,7 +54,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
 
           {/* Logo & Brand Info */}
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col items-center lg:items-start text-center lg:text-left gap-6">
             <div
               className="flex items-center gap-2 text-white font-lexend font-bold text-2xl cursor-pointer"
               onClick={scrollToTop}
@@ -69,7 +69,7 @@ export default function Footer() {
             </p>
 
             {/* Social Links */}
-            <div className="flex items-center gap-4">
+            <div className="flex items-center justify-center lg:justify-start gap-4">
               {socials.map((social) => (
                 <a
                   key={social.name}
@@ -84,9 +84,9 @@ export default function Footer() {
           </div>
 
           {/* Quick Links (Services) */}
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col items-center lg:items-start gap-6">
             <h4 className="text-white font-bold tracking-wider text-sm uppercase">Services</h4>
-            <ul className="flex flex-col gap-3">
+            <ul className="flex flex-col items-center lg:items-start gap-3">
               {footerLinks.services.map((link) => (
                 <li key={link.name}>
                   <a href={link.href} className="text-sm hover:text-yellow-500 transition-colors flex items-center gap-2 group">
@@ -99,9 +99,9 @@ export default function Footer() {
           </div>
 
           {/* Quick Links (Company) */}
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col items-center lg:items-start gap-6">
             <h4 className="text-white font-bold tracking-wider text-sm uppercase">Company</h4>
-            <ul className="flex flex-col gap-3">
+            <ul className="flex flex-col items-center lg:items-start gap-3">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
                   <a href={link.href} className="text-sm hover:text-yellow-500 transition-colors flex items-center gap-2 group">
@@ -114,14 +114,14 @@ export default function Footer() {
           </div>
 
           {/* Contact Details */}
-          <div className="flex flex-col gap-6">
-            <h4 className="text-white font-bold tracking-wider text-sm uppercase">Contact Us</h4>
-            <ul className="flex flex-col gap-4">
+          <div className="flex flex-col items-center lg:items-start gap-6">
+            <h4 className="text-white font-bold tracking-wider text-sm uppercase text-center lg:text-left">Contact Us</h4>
+            <ul className="flex flex-col items-center lg:items-start gap-4">
               {footerLinks.contacts.map((contact) => (
                 <li key={contact.name}>
                   <a
                     href={contact.href}
-                    className="text-sm hover:text-yellow-500 transition-colors flex items-start gap-3 group"
+                    className="text-sm hover:text-yellow-500 transition-colors flex flex-col lg:flex-row items-center lg:items-start gap-3 group text-center lg:text-left"
                   >
                     {contact.icon ? <contact.icon className="w-5 h-5 shrink-0 text-yellow-500/80 group-hover:text-yellow-500 transition-colors" /> : <div className="w-5 h-5 bg-zinc-800 rounded" />}
                     <span className="leading-tight">{contact.name}</span>

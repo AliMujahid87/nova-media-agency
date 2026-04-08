@@ -57,6 +57,7 @@ export default function About() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            className="flex flex-col items-center lg:items-start text-center lg:text-left"
           >
             <h2 className="text-sm font-bold tracking-widest uppercase text-yellow-500 mb-2">Our Mission</h2>
             <h3 className="text-3xl md:text-5xl font-lexend font-extrabold tracking-tight mb-6 leading-tight">
@@ -71,7 +72,7 @@ export default function About() {
               Founded by industry veterans who have managed over $50M in profitable ad spend, we understand the distinct difference between generating vanity metrics and generating actual profit.
             </p>
 
-            <div className="grid grid-cols-2 gap-8">
+            <div className="grid grid-cols-2 gap-8 w-full">
               <div className="flex flex-col">
                 <span className="text-4xl font-lexend font-extrabold text-white mb-2">94%</span>
                 <span className="text-sm text-yellow-500 font-bold uppercase tracking-widest">Client Retention</span>
