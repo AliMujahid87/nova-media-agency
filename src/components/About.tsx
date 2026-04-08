@@ -73,18 +73,30 @@ export default function About() {
               Founded by industry veterans who have managed over $50M in profitable ad spend, we understand the distinct difference between generating vanity metrics and generating actual profit.
             </p>
 
-            <div className="grid grid-cols-2 gap-8 w-full mt-8">
+            <div className="grid grid-cols-2 gap-y-10 gap-x-8 w-full mt-12 pb-4">
               <div className="flex flex-col">
-                <span className="text-4xl font-lexend font-extrabold text-white mb-2">
+                <span className="text-4xl md:text-5xl font-lexend font-extrabold text-white mb-2">
                   <Counter value={94} />%
                 </span>
                 <span className="text-sm text-yellow-500 font-bold uppercase tracking-widest">Client Retention</span>
               </div>
               <div className="flex flex-col">
-                <span className="text-4xl font-lexend font-extrabold text-white mb-2">
+                <span className="text-4xl md:text-5xl font-lexend font-extrabold text-white mb-2">
                   $<Counter value={100} />M+
                 </span>
                 <span className="text-sm text-amber-500 font-bold uppercase tracking-widest">Revenue Generated</span>
+              </div>
+              <div className="flex flex-col">
+                <span className="text-4xl md:text-5xl font-lexend font-extrabold text-white mb-2">
+                  <Counter value={500} />+
+                </span>
+                <span className="text-sm text-orange-500 font-bold uppercase tracking-widest">Projects Completed</span>
+              </div>
+              <div className="flex flex-col">
+                <span className="text-4xl md:text-5xl font-lexend font-extrabold text-white mb-2">
+                  $<Counter value={50} />M+
+                </span>
+                <span className="text-sm text-yellow-400 font-bold uppercase tracking-widest">Ad Spend Managed</span>
               </div>
             </div>
           </motion.div>
